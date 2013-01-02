@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: learning | My Octopress Blog]]></title>
-  <link href="http://panks.github.com/blog/categories/learning/atom.xml" rel="self"/>
-  <link href="http://panks.github.com/"/>
-  <updated>2013-01-03T05:19:01+05:30</updated>
-  <id>http://panks.github.com/</id>
+  <link href="http://pankaj-kumar.github.com/blog/categories/learning/atom.xml" rel="self"/>
+  <link href="http://pankaj-kumar.github.com/"/>
+  <updated>2013-01-03T05:23:40+05:30</updated>
+  <id>http://pankaj-kumar.github.com/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Richard Feynman way of learning better and faster]]></title>
-    <link href="http://panks.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster/"/>
+    <link href="http://pankaj-kumar.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster/"/>
     <updated>2012-12-13T05:10:00+05:30</updated>
-    <id>http://panks.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster</id>
+    <id>http://pankaj-kumar.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster</id>
     <content type="html"><![CDATA[<p><list>
 <li>Step 1. <strong>Choose the concept you want to understand</strong><br></li>
 Take a blank piece of paper and write that concept at the top of the page.</p>

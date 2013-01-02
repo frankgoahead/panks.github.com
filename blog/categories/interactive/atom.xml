@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: interactive | My Octopress Blog]]></title>
-  <link href="http://panks.github.com/blog/categories/interactive/atom.xml" rel="self"/>
-  <link href="http://panks.github.com/"/>
-  <updated>2013-01-03T05:19:01+05:30</updated>
-  <id>http://panks.github.com/</id>
+  <link href="http://pankaj-kumar.github.com/blog/categories/interactive/atom.xml" rel="self"/>
+  <link href="http://pankaj-kumar.github.com/"/>
+  <updated>2013-01-03T05:23:40+05:30</updated>
+  <id>http://pankaj-kumar.github.com/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Vim – Interactive tutorial]]></title>
-    <link href="http://panks.github.com/blog/2011/07/29/vim-interactive-tutorial/"/>
+    <link href="http://pankaj-kumar.github.com/blog/2011/07/29/vim-interactive-tutorial/"/>
     <updated>2011-07-29T07:38:00+05:30</updated>
-    <id>http://panks.github.com/blog/2011/07/29/vim-interactive-tutorial</id>
-    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/vimlogo.png" height=30% width=30% ></center>
+    <id>http://pankaj-kumar.github.com/blog/2011/07/29/vim-interactive-tutorial</id>
+    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/vimlogo.png" height=30% width=30% ></center>
 
 
 <br>

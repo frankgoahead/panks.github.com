@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: redshift | My Octopress Blog]]></title>
-  <link href="http://panks.github.com/blog/categories/redshift/atom.xml" rel="self"/>
-  <link href="http://panks.github.com/"/>
-  <updated>2013-01-03T05:19:01+05:30</updated>
-  <id>http://panks.github.com/</id>
+  <link href="http://pankaj-kumar.github.com/blog/categories/redshift/atom.xml" rel="self"/>
+  <link href="http://pankaj-kumar.github.com/"/>
+  <updated>2013-01-03T05:23:40+05:30</updated>
+  <id>http://pankaj-kumar.github.com/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Deploy your cloud apps for free]]></title>
-    <link href="http://panks.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free/"/>
+    <link href="http://pankaj-kumar.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free/"/>
     <updated>2012-05-31T07:26:00+05:30</updated>
-    <id>http://panks.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free</id>
+    <id>http://pankaj-kumar.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free</id>
     <content type="html"><![CDATA[<p>If you want to host you webapp somewhere and test/present it for
 free, you can use the free service given by Heroku or Openshift by Red
 Hat.</p></p>
@@ -33,7 +33,7 @@ need to push your app to your server via git to deploy it.</p>
 
 
 <p>You can get started with heroku here – <a href="http://devcenter.heroku.com/articles/quickstart">http://devcenter.heroku.com/articles/quickstart</a>.
-<center><br><img  src="http://panks.github.com/images/posts/250px-OpenShift-LogoType.svg.png" class="bd"></center><br>
+<center><br><img  src="http://pankaj-kumar.github.com/images/posts/250px-OpenShift-LogoType.svg.png" class="bd"></center><br>
 You would also learn how to use git (a version control software) to 
 be able to deploy your application on heroku. For the first timers, it 
 would take some time to get your application running on heroku. Once you

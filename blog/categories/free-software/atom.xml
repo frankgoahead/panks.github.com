@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: free software | My Octopress Blog]]></title>
-  <link href="http://panks.github.com/blog/categories/free-software/atom.xml" rel="self"/>
-  <link href="http://panks.github.com/"/>
-  <updated>2013-01-03T05:19:01+05:30</updated>
-  <id>http://panks.github.com/</id>
+  <link href="http://pankaj-kumar.github.com/blog/categories/free-software/atom.xml" rel="self"/>
+  <link href="http://pankaj-kumar.github.com/"/>
+  <updated>2013-01-03T05:23:40+05:30</updated>
+  <id>http://pankaj-kumar.github.com/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,15 +15,15 @@
   
   <entry>
     <title type="html"><![CDATA[Richard Stallman at IIT Madras]]></title>
-    <link href="http://panks.github.com/blog/2011/11/06/richard-stallman-at-iit-madras/"/>
+    <link href="http://pankaj-kumar.github.com/blog/2011/11/06/richard-stallman-at-iit-madras/"/>
     <updated>2011-11-06T07:33:00+05:30</updated>
-    <id>http://panks.github.com/blog/2011/11/06/richard-stallman-at-iit-madras</id>
+    <id>http://pankaj-kumar.github.com/blog/2011/11/06/richard-stallman-at-iit-madras</id>
     <content type="html"><![CDATA[<p>Today I got to meet the man who started it all.. who started the 
 concept of “FREE SOFTWARE”… who started the GNU project, Richard 
 Stallman.</p>
 
 
-<center><img src="http://panks.github.com/images/posts/stallman.jpg" height=40% width=40%></center>
+<center><img src="http://pankaj-kumar.github.com/images/posts/stallman.jpg" height=40% width=40%></center>
 
 
 <br>
