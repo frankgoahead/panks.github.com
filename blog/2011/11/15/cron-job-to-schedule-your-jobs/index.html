@@ -1,0 +1,410 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cron job to schedule your jobs - My Octopress Blog</title>
+    <meta name="author" content="Pankaj Kumar">
+<!--
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    -->
+    
+	<meta name="description" content="While writing an Application for an Advertising company I came across this utility, this called Cron.
+It’s a GNU-Linux application to run programs or &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/combo.js"></script>
+	
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner">    <div id="animateTest">
+<h1 class="animated bounceInDown">
+        Pankaj Kumar
+</h1>
+    </div>
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/panks" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/234420948240928340" class="googleplus" title="Google Plus"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/panks.cogito" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/pankajxdx" class="twitter" title="Twitter"></a>
+  </li>
+  
+</ul>
+
+
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li><a href="https://www.github.com/panks">Code</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="" id="search">
+            <input name="query" type="text" style="margin-top:20px;" size="40" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="search_results" style="display:none">
+<header><h1 class="entry-title"><center>Search Results</center></h1></header>
+<br>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+<script>
+         $('#search_results').tapir({
+             'token': '50e03b6e3f61b0160000014d'
+         });
+</script>
+    <div id="container">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Cron Job to Schedule Your Jobs</h2>
+	<div class="entry-content"><p>While writing an Application for an Advertising company I came across this utility, this called <code>Cron</code>.
+It’s a <a href="http://gnu.org">GNU-Linux</a> application to run programs or scripts at specified date/time, so basically you can schedule you jobs using Cron.</p>
+
+<br>
+
+
+<p><strong>How to use it:</strong>
+It’s actually a demon. (In case you don’t know) <a href="http://en.wikipedia.org/wiki/Daemon_(computing)">Demons</a> are applications which are started once to keep them running in background and sit idle until they are required. It is already installed in most of the Linux distributions.</p>
+
+<!--more-->
+
+
+<br>
+
+
+<p>In the <code>/etc</code> directory you will probably find some sub directories called ‘<code>cron.hourly</code>‘, ‘<code>cron.daily</code>‘, ‘<code>cron.weekly</code>‘ and ‘<code>cron.monthly</code>‘. If you place a script into one of those directories it will be run either hourly, daily, weekly or monthly, depending on the name of the directory.</p>
+
+<br>
+
+
+<center><img class="bd" src="/images/posts/cron.png" height=70% width=70%></center>
+
+
+<br>
+
+
+<p>If you want more flexibility than this, you can edit a crontab (the name for cron’s config files). The main config file is normally <code>/etc/crontab</code>.</p>
+
+<p>On a default RedHat install, the crontab will look something like this:</p>
+
+<pre class="sh_bash">
+root@pingu # cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+# run-parts
+01 * * * * root run-parts /etc/cron.hourly
+02 4 * * * root run-parts /etc/cron.daily
+22 4 * * 0 root run-parts /etc/cron.weekly
+42 4 1 * * root run-parts /etc/cron.monthly
+</pre>
+
+
+<p>The first part is almost self explanatory; it sets the variables for cron.</p>
+
+<br><br>
+
+
+<p><strong>SHELL</strong> is the ‘shell’ cron runs under. If unspecified, it will default to the entry in the /etc/passwd file.</p>
+
+<br>
+
+
+<p><strong>PATH</strong> contains the directories which will be in the search path for cron</p>
+
+<br>
+
+
+<p>e.g if you’ve got a program ‘foo’ in the directory /usr/cog/bin, it might be worth adding /usr/cog/bin to the path, as it will stop you having to use the full path to ‘foo’ every time you want to call it.</p>
+
+<br>
+
+
+<p><strong>MAILTO</strong> is who gets mailed the output of each command. If a command cron is running has output (e.g. status reports, or errors), cron will email the output to whoever is specified in this variable. If no one if specified, then the output will be mailed to the owner of the process that produced the output.</p>
+
+<br>
+
+
+<p><strong>HOME</strong> is the home directory that is used for cron. If unspecified, it will default to the entry in the /etc/passwd file.</p>
+
+<br>
+
+
+<p>Now for the more complicated second part of a crontab file. An entry in cron is made up of a series of fields, much like the /etc/passwd file is, but in the crontab they are separated by a space. There are normally seven fields in one entry. The fields are:</p>
+
+<br>
+
+
+<p>minute hour dom month dow user cmd</p>
+
+<br><br>
+
+
+<p><strong>minute</strong> This controls what minute of the hour the command will run on, and is between ’0′ and ’59′</p>
+
+<br>
+
+
+<p><strong>hour</strong> This controls what hour the command will run on, and is specified in the 24 hour clock, values must be between 0 and 23 (0 is midnight)</p>
+
+<br>
+
+
+<p><strong>dom</strong> This is the Day of Month, that you want the command run on, e.g. to run a command on the 19th of each month, the dom would be 19.</p>
+
+<br>
+
+
+<p><strong>month</strong> This is the month a specified command will run on, it may be specified numerically (0-12), or as the name of the month (e.g. May)</p>
+
+<br>
+
+
+<p><strong>dow</strong> This is the Day of Week that you want a command to be run on, it can also be numeric (0-7) or as the name of the day (e.g. sun).</p>
+
+<br>
+
+
+<p><strong>user</strong> This is the user who runs the command.</p>
+
+<br>
+
+
+<p><strong>cmd</strong> This is the command that you want run. This field may contain multiple words or spaces.</p>
+
+<br><br>
+
+
+<p>If you don’t wish to specify a value for a field, just place a * in the field.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<br>
+
+
+<pre class="sh_bash">
+01 * * * * root echo “This command is run at one min past every hour”
+17 8 * * * root echo “This command is run daily at 8:17 am”
+17 20 * * * root echo “This command is run daily at 8:17 pm”
+00 4 * * 0 root echo “This command is run at 4 am every Sunday”
+* 4 * * Sun root echo “So is this”
+42 4 1 * * root echo “This command is run 4:42 am every 1st of the month”
+01 * 19 07 * root echo “This command is run hourly on the 19th of July”
+</pre>
+
+
+<br> 
+
+
+<p><strong>Notes:</strong></p>
+
+<p>Under dow 0 and 7 are both Sunday.</p>
+
+<br>
+
+
+<p>If both the dom and dow are specified, the command will be executed when either of the events happen.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<br>
+
+
+<pre class="sh_bash">
+* 12 16 * Mon root cmd
+</pre>
+
+
+<br>
+
+
+<p>Will run cmd at midday every Monday and every 16th, and will produce the same result as both of these entries put together would:</p>
+
+<br>
+
+
+<pre class="sh_bash">
+* 12 16 * * root cmd
+* 12 * * Mon root cmd
+</pre>
+
+
+<br><br>
+
+
+<p>Vixie Cron also accepts lists in the fields. Lists can be in the form, 1,2,3 (meaning 1 and 2 and 3) or 1-3 (also meaning 1 and 2 and 3).</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<pre class="sh_bash">
+59 11 * * 1,2,3,4,5 root backup.sh
+</pre>
+
+
+<p>Will run backup.sh at 11:59 Monday, Tuesday, Wednesday, Thursday and Friday, as will:</p>
+
+<pre class="sh_bash">
+59 11 * * 1-5 root backup.sh
+</pre>
+
+
+<br><br>
+
+
+<p>Cron also supports ‘step’ values.</p>
+
+<br>
+
+
+<p>A value of <em>/2 in the dom field would mean the command runs every two days and likewise, </em>/5 in the hours field would mean the command runs every 5 hours.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<pre class="sh_bash">
+* 12 10-16/2 * * root backup.sh
+</pre>
+
+
+<p>is the same as:</p>
+
+<pre class="sh_bash">
+* 12 10,12,14,16 * * root backup.sh
+</pre>
+
+
+
+
+<pre class="sh_bash">
+*/15 9-17 * * * root connection.test
+</pre>
+
+
+<p>Will run connection.test every 15 mins between the hours or 9am and 5pm</p>
+
+<p>Lists can also be combined with each other, or with steps:</p>
+
+<pre class="sh_bash">
+* 12 1-15,17,20-25 * * root cmd
+</pre>
+
+
+<p>Will run cmd every midday between the 1st and the 15th as well as the 20th and 25th (inclusive) and also on the 17th of every month.</p>
+
+<pre class="sh_bash">
+* 12 10-16/2 * * root backup.sh
+</pre>
+
+
+<p>is the same as:</p>
+
+<pre class="sh_bash">
+* 12 10,12,14,16 * * root backup.sh
+</pre>
+
+
+<p>When using the names of weekdays or months, it isn’t case sensitive, but only the first three letters should be used, e.g. Mon, sun or Mar, jul.</p>
+
+<br>
+
+
+<p>Comments are allowed in crontabs, but they must be preceded with a &#8217;<code>#</code>’, and must be on a line by them self.<br></p>
+</div>
+
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer"><div style="display:inline">
+    Copyright &copy; 2013
+
+    Pankaj Kumar
+. Powered by <a href="http://octopress.org">Octopress</a> <em>HTML5 & CSS3</em>
+</div>
+
+</footer>
+    <script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

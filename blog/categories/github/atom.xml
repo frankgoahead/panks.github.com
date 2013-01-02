@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | My Octopress Blog]]></title>
+  <link href="http://panks.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://panks.github.com/"/>
+  <updated>2013-01-03T05:19:01+05:30</updated>
+  <id>http://panks.github.com/</id>
+  <author>
+    <name><![CDATA[Pankaj Kumar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Host your blog on Github for free]]></title>
+    <link href="http://panks.github.com/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
+    <updated>2012-04-30T07:20:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/04/30/host-your-blog-on-github-for-free</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/githubicon.png"></center>
+
+
+<br>
+
+
+<p>I recently came across this article about github pages.</p>
+
+<br>
+
+
+<p>If you make a repo with name same as your <strong>username</strong> then the content of the repo is hosted as subdomain <strong>http://YOURUSERNAME.github.com</strong></p>
+
+<br>
+
+
+<p>Read here: <a href="http://help.github.com/pages/">http://help.github.com/pages/</a></p>
+
+<br>
+
+
+<p>So now you can host your blog at Github sub-domain for free and update via Git! cool! B-)</p>
+
+<!--more-->
+
+
+<p>But as Github will not really provide you a server running php, mysql, etc so the limitation is it has to be static, but no worries, <a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap</a> comes to rescue here. It’s a static site generator which would generate the html for you and then you can push it to you blog via git. Bingo!</p>
+]]></content>
+  </entry>
+  
+</feed>

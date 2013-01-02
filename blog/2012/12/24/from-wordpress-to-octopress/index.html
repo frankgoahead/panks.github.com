@@ -1,0 +1,296 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>From Wordpress to Octopress - My Octopress Blog</title>
+    <meta name="author" content="Pankaj Kumar">
+<!--
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    -->
+    
+	<meta name="description" content="I am writing this post about Octopress, and this is my second migration from Wordpress to Octopress.
+When I moved for the first time it was actually &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/combo.js"></script>
+	
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner">    <div id="animateTest">
+<h1 class="animated bounceInDown">
+        Pankaj Kumar
+</h1>
+    </div>
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/panks" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/234420948240928340" class="googleplus" title="Google Plus"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/panks.cogito" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/pankajxdx" class="twitter" title="Twitter"></a>
+  </li>
+  
+</ul>
+
+
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li><a href="https://www.github.com/panks">Code</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="" id="search">
+            <input name="query" type="text" style="margin-top:20px;" size="40" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="search_results" style="display:none">
+<header><h1 class="entry-title"><center>Search Results</center></h1></header>
+<br>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+<script>
+         $('#search_results').tapir({
+             'token': '50e03b6e3f61b0160000014d'
+         });
+</script>
+    <div id="container">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">From Wordpress to Octopress</h2>
+	<div class="entry-content"><center><img src="/images/posts/octopress-logo.png"></center>
+
+
+<br>
+
+
+<p>I am writing this post about <a href="http://octopress.org">Octopress</a>, and this is my second migration from <a href="http://wordpress.org">Wordpress</a> to Octopress.
+When I moved for the first time it was actually a transition to <a href="https://github.com/mojombo/jekyll/wiki">Jekyll</a> and not Octopress, it was more of a experimentation, I installed it, generated the pages, pushed it and checked, it was all cool but it all seemed a little rough and I didn&#8217;t give it enough time to soak into and switched back immediately to WP. But when I came across Octopress, I realized it was a huge improvement on top of jekyll and read few reviews too and it turned out it suits me best for the needs.</p>
+
+<br>
+
+
+<p>The site you are curretly viewing doesn&#8217;t need a server to generate html or maintain database. It consist entirely of pre-baked pages,<!--more--> mean what-you-get is what-is-stored, you can fire it up directly in your browser from hard disk, you carry the entire working blog along with you and deploy it with zero effort anywhere, anytime that&#8217;s the coolest things about Octopress, it runs your blog on flat files as compared to Wordpess (and million other blogging tools/CMS) which stores you posts/contents in
+databases.</p>
+
+<br>
+
+
+<p>Now that doesn&#8217;t mean Wordpress is not cool, I have used it for quite a long time, but just that I think it&#8217;s intended toward a different set of users, and I feel maitaining such a huge CMS with a databse and it&#8217;s plugins and keeping them up-to-date is a little too much extra homework for a(my) blog, it just feels unnatural for a simple blog. While with Octopress the fact that I work with my blog like an application, I can work on it, commit it, make a draft and when it&#8217;s in presentable form then deploy it with one command, and can tar the entire(working) blog and carry it in my thumb drive and launch it off anywhere and it needs minimum requirement for hosting (just a bare minimum computer running all the time), give a real comfy feeling. Since it&#8217;s static there is no native support for comments but <a href="http://disqus.com">disqus</a> rocks!</p>
+
+<p>and while talking of being comfy, there is extra bonus which comes with Octopress, since html is pre-generated and no database is required you can host it for free (free as in freedom and also free as in free beer ;) ) on <a href="http://pages.github.com">Github Pages</a> or on <a href="http://heroku.com">Heroku</a>, no bandwidth limit or anything, hurray!
+and of course you can deploy it if you have your own web hosting,</p>
+
+<hr>
+
+
+<h2>Goodbye! Wordpress</h2>
+
+
+<center><img class="bd" src="/images/posts/Exit-Signboard2.jpg" height=100% width=100%></center>
+
+
+<br>
+
+
+<p>You can use <a href="https://github.com/thomasf/exitwp/">exitwp</a> to extract the posts from your Wordpess blog which would convert your XML to markdown format, which can be used with Octopress directly. You can extract everything apart from comments, if you used disqus or <a href="http://livefyre.com">livefyre</a> or some similar service then transferring comments shouldn&#8217;t be a problem at all, else you might have to just say good-bye to them.</p>
+
+<hr>
+
+
+<h2>Setting it up</h2>
+
+
+<center><img class="bd" title="Let's go back to Static" alt="Let's go back to static" src="/images/posts/fromwptoop.jpg"></center>
+
+
+<br>
+
+
+<p>Setting up Octopress is a piece of cake, if you are developer of any sort then it would take not more than 20 mins to get it up and running on your Github. Just run a little rake script and get the job done.</p>
+
+<p>I&#8217;ll give a short pathway to get it up and running:</p>
+
+<br>
+
+
+<p>Fork the Octopress from here</p>
+
+<pre class="sh_bash">
+git clone git://github.com/imathis/octopress.git octopress
+</pre>
+
+
+<p>Install ruby(if not already installed)
+You can use Rbenv or RVM to install ruby, I personally prefer the RVM way</p>
+
+<pre class="sh_bash">
+curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</pre>
+
+
+<p>Install dependencies for Octopress</p>
+
+<pre class="sh_bash">
+// cd into octopress directory
+gem install bundler
+bundle install
+</pre>
+
+
+<p>This would complete the setup process, now you can add new posts with</p>
+
+<pre class="sh_bash">
+rake new_post['Post title']
+</pre>
+
+
+<p>this would generate a markdown file in /source/_posts/Post-title.markdown
+you can add content to it, and install default theme and generate static html by running</p>
+
+<pre class="sh_bash">
+rake install
+rake generate
+</pre>
+
+
+<p>now if you want to push your blog to Github make a repository USERNAME.github.com in your Github account
+and run</p>
+
+<pre class="sh_bash">
+rake setup_github_pages
+</pre>
+
+
+<p>give the details and run</p>
+
+<pre class="sh_bash">
+rake deploy
+</pre>
+
+
+<p>to push it to your github repository, and open USERNAME.github.com and voila!</p>
+
+<hr>
+
+
+<h2>CNAME</h2>
+
+
+<p>Not only this, even if you want to use your custom domain for your blog, it&#8217;s just two step away.</p>
+
+<ul>
+<li> Make a file <strong>CNAME</strong> in site root, with your domain name as content i.e. mydomain.com
+<li> Make a A record in your domain settings pointing to Github which is <code>204.232.175.78</code> (at the time of writing, check <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">here</a> for latest details).
+</ul>
+
+
+<p>and one thing which you would start feeling and enjoying just as you start using Octopress is you would have a complete control over your blog, you decide it entirely, how it looks, what it does and which code goes where. It&#8217;s based on a very powerful blog engine, Jekyll.</p>
+
+<hr>
+
+
+<h2>Finally</h2>
+
+
+<p>Here is the final landing:</p>
+
+<ul class="reasons">
+<li> Static pages, no need of PHP server for hosting</li>
+<li> No database, no hassle of backing it up etc, you blog is with you all the time </li>
+<li> Posting just became more efficient and enjoyable, fire up the terminal and open your favorite editor and enjoy! </li>
+<li> HTML files are great for caching </li>
+<li> Free hosting and unlimited bandwidth </li>
+<li> Ultimate control over my blog</li>
+</ul>
+
+
+<p>Blogging is just a breeze now. I love you Octopress!</p>
+</div>
+
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer"><div style="display:inline">
+    Copyright &copy; 2013
+
+    Pankaj Kumar
+. Powered by <a href="http://octopress.org">Octopress</a> <em>HTML5 & CSS3</em>
+</div>
+
+</footer>
+    <script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

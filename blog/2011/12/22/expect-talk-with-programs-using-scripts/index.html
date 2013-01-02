@@ -1,0 +1,181 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Expect- talk with programs using scripts - My Octopress Blog</title>
+    <meta name="author" content="Pankaj Kumar">
+<!--
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    -->
+    
+	<meta name="description" content="&#8220;OK! Now I can&#8217;t bear it anymore&#8221; - The condition after our endsems got over, as Insti bandwidth usages was on peak, one had no &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/combo.js"></script>
+	
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner">    <div id="animateTest">
+<h1 class="animated bounceInDown">
+        Pankaj Kumar
+</h1>
+    </div>
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/panks" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/234420948240928340" class="googleplus" title="Google Plus"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/panks.cogito" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/pankajxdx" class="twitter" title="Twitter"></a>
+  </li>
+  
+</ul>
+
+
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li><a href="https://www.github.com/panks">Code</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="" id="search">
+            <input name="query" type="text" style="margin-top:20px;" size="40" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="search_results" style="display:none">
+<header><h1 class="entry-title"><center>Search Results</center></h1></header>
+<br>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+<script>
+         $('#search_results').tapir({
+             'token': '50e03b6e3f61b0160000014d'
+         });
+</script>
+    <div id="container">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Expect- Talk With Programs Using Scripts</h2>
+	<div class="entry-content"><p>&#8220;OK! Now I can&#8217;t bear it anymore&#8221; - The condition after our endsems got over, as Insti bandwidth usages was on peak, one had no work other than running behind monkey (yeah we do have monkeys in our campus, all around us, so blessed we are, aren&#8217;t we?) to scare them to death or stick your bum to chair and do some time pass on internet.</p>
+
+<br>
+
+
+<p>But they say there is solution to every problem, here was it.<!--more--> We had access to our departmental network, which uses different proxy server, and since the LAN is common throughout the Insti we could connect to it, to get a little relief in internet speed, obviously everyone could do that, but you don&#8217;t expect students from Bio-tech people to type commands in terminal(they are already happy enough by looking at windows animation), until that&#8217;s the only option to save the human race.</p>
+
+<center><img src="/images/posts/batmantux.png"></center>
+
+
+<p> <br></p>
+
+<br>
+
+
+<p>But for lazzy bum like me it was painful to type the command to ssh to the departmental computers every time I login to my laptop. So I wrote a script to do that, obviously auto-run on system start.
+But there was a catch, we had to input our login password while connecting to departmental computers and there was no way in linux terminal to supply the password automatically on request :(</p>
+
+<br>
+
+
+<p>When will google come to work?! I googled it and got to know about Expect, it is a toolkit for automating interactive programs, such as TELNET and FTP, written by Don Libes. It knows what can be expected from a program and what the correct response would be.
+You can this page to get an idea of how expect works, it contains six basic examples: <a href="http://www.thegeekstuff.com/2010/10/expect-examples/">http://www.thegeekstuff.com/2010/10/expect-examples/</a></p>
+
+<br>
+
+
+<p>For more info you can click at: <a href="http://oreilly.com/catalog/expect/chapter/ch03.html">http://oreilly.com/catalog/expect/chapter/ch03.html</a></p>
+
+<br>
+
+
+<p>
+<strong>edit:</strong> Instead of running the script of system startup, you can ask network manager to do it for you, that way even if the network goes off while you are working and comes back again, you wold be reconnected. You can put your script in <strong>/etc/network/if-up.d</strong> on debian based distros and in <strong>/etc/NetworkManager/dispatcher.d/</strong> in fedora/redhat based distros, that would be executed when the network connects. If you plan to put more than one script you can specify the sequence by naming them
+starting with a number between 1 and 99, they would be executed in ascending order, ex. <code>5-myscript.sh</code>, default is 50.
+</p>
+
+</div>
+
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer"><div style="display:inline">
+    Copyright &copy; 2013
+
+    Pankaj Kumar
+. Powered by <a href="http://octopress.org">Octopress</a> <em>HTML5 & CSS3</em>
+</div>
+
+</footer>
+    <script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

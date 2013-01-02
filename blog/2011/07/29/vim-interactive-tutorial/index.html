@@ -1,0 +1,202 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vim – Interactive tutorial - My Octopress Blog</title>
+    <meta name="author" content="Pankaj Kumar">
+<!--
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    -->
+    
+	<meta name="description" content="Vim is probably the most configurable text editor know. It was written by Bram Moolenaar and first released publicly in 1991 but it’s is in active &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/combo.js"></script>
+	
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner">    <div id="animateTest">
+<h1 class="animated bounceInDown">
+        Pankaj Kumar
+</h1>
+    </div>
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/panks" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/234420948240928340" class="googleplus" title="Google Plus"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/panks.cogito" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/pankajxdx" class="twitter" title="Twitter"></a>
+  </li>
+  
+</ul>
+
+
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li><a href="https://www.github.com/panks">Code</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="" id="search">
+            <input name="query" type="text" style="margin-top:20px;" size="40" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="search_results" style="display:none">
+<header><h1 class="entry-title"><center>Search Results</center></h1></header>
+<br>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+<script>
+         $('#search_results').tapir({
+             'token': '50e03b6e3f61b0160000014d'
+         });
+</script>
+    <div id="container">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Vim – Interactive Tutorial</h2>
+	<div class="entry-content"><center><img src="/images/posts/vimlogo.png" height=30% width=30% ></center>
+
+
+<br>
+
+
+<p>Vim is probably the most configurable text editor know. It was written by <a title="Bram Moolenaar" href="http://en.wikipedia.org/wiki/Bram_Moolenaar">Bram Moolenaar</a>
+ and first released publicly in 1991 but it’s is in active development
+and it used across several plaforms including Linux, Windows and Mac.
+It is widely used in developer community due to its:</p>
+
+<!--more-->
+
+
+<br>
+
+
+<p><list>
+<li><strong>Flexible multiple document interface</strong>: In Vim, your
+files and unsaved documents are referred to as buffers. The editor gives
+ you a tremendous amount of control over how your buffers are displayed
+on the screen</li><br>
+<li><strong>Modal editing with sophisticated keyboard shortcuts</strong>:
+ Vim has separate interaction modes for text input and text editing.
+Insert mode behaves largely as you would expect a regular text editor to
+ work—commands are performed with conventional keyboard shortcuts and
+characters are appended to the buffer as you press the associated keys.
+In the “normal” mode, however, sequences of key presses perform commands</li><br>
+<li><strong>Multiple clipboards</strong>: Instead of a conventional
+clipboard, Vim stores copied text with a mechanism that it calls
+registers. This effectively acts like a clipboard multiplexer. The
+contents of the registers persist between uses of Vim, which means that
+they are preserved when you quit and will still be there when you open
+the editor again.</li><br>
+<li><strong>Macros</strong>: Vim has a macro system that allows you to record keypresses for later playback.</li><br>
+<li><strong>Extremely powerful search capabilities</strong>: Vim has
+some very sophisticated tools for automated search and replace,
+including extensive support for regular expressions. It also has a
+built-in version of the <code>grep</code> command, which integrates with
+ Vim’s enormously convenient quickfix feature—a special buffer that
+shows you a list of results and allows you to conveniently jump between
+them.</li><br>
+<li><strong>Extremely rich extensibility</strong>: Vim is prodigiously
+scriptable and highly conducive to automation. It has its own native
+scripting language with container types, a unique variable scoping
+model, and a bunch of useful Vim-specific functionality</li><br>
+<li><strong>Portability</strong>: Vim will work almost everywhere that
+you do. Vim is widely used on Windows, Linux, and Mac OS X and is
+available for many other platform. Users can run it from the terminal or
+ operate it with a native graphical interface on all three major
+operating systems.
+</li><br>
+</list></p>
+
+<p>But starting Vim for the first time is painful for everyone. Here I
+ got an interactive online tutorial on Vim, which is fun to try
+out:&nbsp;<a href="http://www.openvim.com/tutorial.html">http://www.openvim.com/tutorial.html</a>
+If you are starting with Vim, I would recommend you to try it out once, just for fun.. :)</p>
+</div>
+
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer"><div style="display:inline">
+    Copyright &copy; 2013
+
+    Pankaj Kumar
+. Powered by <a href="http://octopress.org">Octopress</a> <em>HTML5 & CSS3</em>
+</div>
+
+</footer>
+    <script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

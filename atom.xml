@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://panks.github.com/atom.xml" rel="self"/>
+  <link href="http://panks.github.com/"/>
+  <updated>2013-01-03T05:19:01+05:30</updated>
+  <id>http://panks.github.com/</id>
+  <author>
+    <name><![CDATA[Pankaj Kumar]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[From Wordpress to Octopress]]></title>
+    <link href="http://panks.github.com/blog/2012/12/24/from-wordpress-to-octopress/"/>
+    <updated>2012-12-24T18:20:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/12/24/from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/octopress-logo.png"></center>
+
+
+<br>
+
+
+<p>I am writing this post about <a href="http://octopress.org">Octopress</a>, and this is my second migration from <a href="http://wordpress.org">Wordpress</a> to Octopress.
+When I moved for the first time it was actually a transition to <a href="https://github.com/mojombo/jekyll/wiki">Jekyll</a> and not Octopress, it was more of a experimentation, I installed it, generated the pages, pushed it and checked, it was all cool but it all seemed a little rough and I didn&#8217;t give it enough time to soak into and switched back immediately to WP. But when I came across Octopress, I realized it was a huge improvement on top of jekyll and read few reviews too and it turned out it suits me best for the needs.</p>
+
+<br>
+
+
+<p>The site you are curretly viewing doesn&#8217;t need a server to generate html or maintain database. It consist entirely of pre-baked pages,<!--more--> mean what-you-get is what-is-stored, you can fire it up directly in your browser from hard disk, you carry the entire working blog along with you and deploy it with zero effort anywhere, anytime that&#8217;s the coolest things about Octopress, it runs your blog on flat files as compared to Wordpess (and million other blogging tools/CMS) which stores you posts/contents in
+databases.</p>
+
+<br>
+
+
+<p>Now that doesn&#8217;t mean Wordpress is not cool, I have used it for quite a long time, but just that I think it&#8217;s intended toward a different set of users, and I feel maitaining such a huge CMS with a databse and it&#8217;s plugins and keeping them up-to-date is a little too much extra homework for a(my) blog, it just feels unnatural for a simple blog. While with Octopress the fact that I work with my blog like an application, I can work on it, commit it, make a draft and when it&#8217;s in presentable form then deploy it with one command, and can tar the entire(working) blog and carry it in my thumb drive and launch it off anywhere and it needs minimum requirement for hosting (just a bare minimum computer running all the time), give a real comfy feeling. Since it&#8217;s static there is no native support for comments but <a href="http://disqus.com">disqus</a> rocks!</p>
+
+<p>and while talking of being comfy, there is extra bonus which comes with Octopress, since html is pre-generated and no database is required you can host it for free (free as in freedom and also free as in free beer ;) ) on <a href="http://pages.github.com">Github Pages</a> or on <a href="http://heroku.com">Heroku</a>, no bandwidth limit or anything, hurray!
+and of course you can deploy it if you have your own web hosting,</p>
+
+<hr>
+
+
+<h2>Goodbye! Wordpress</h2>
+
+
+<center><img class="bd" src="http://panks.github.com/images/posts/Exit-Signboard2.jpg" height=100% width=100%></center>
+
+
+<br>
+
+
+<p>You can use <a href="https://github.com/thomasf/exitwp/">exitwp</a> to extract the posts from your Wordpess blog which would convert your XML to markdown format, which can be used with Octopress directly. You can extract everything apart from comments, if you used disqus or <a href="http://livefyre.com">livefyre</a> or some similar service then transferring comments shouldn&#8217;t be a problem at all, else you might have to just say good-bye to them.</p>
+
+<hr>
+
+
+<h2>Setting it up</h2>
+
+
+<center><img class="bd" title="Let's go back to Static" alt="Let's go back to static" src="http://panks.github.com/images/posts/fromwptoop.jpg"></center>
+
+
+<br>
+
+
+<p>Setting up Octopress is a piece of cake, if you are developer of any sort then it would take not more than 20 mins to get it up and running on your Github. Just run a little rake script and get the job done.</p>
+
+<p>I&#8217;ll give a short pathway to get it up and running:</p>
+
+<br>
+
+
+<p>Fork the Octopress from here</p>
+
+<pre class="sh_bash">
+git clone git://github.com/imathis/octopress.git octopress
+</pre>
+
+
+<p>Install ruby(if not already installed)
+You can use Rbenv or RVM to install ruby, I personally prefer the RVM way</p>
+
+<pre class="sh_bash">
+curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</pre>
+
+
+<p>Install dependencies for Octopress</p>
+
+<pre class="sh_bash">
+// cd into octopress directory
+gem install bundler
+bundle install
+</pre>
+
+
+<p>This would complete the setup process, now you can add new posts with</p>
+
+<pre class="sh_bash">
+rake new_post['Post title']
+</pre>
+
+
+<p>this would generate a markdown file in /source/_posts/Post-title.markdown
+you can add content to it, and install default theme and generate static html by running</p>
+
+<pre class="sh_bash">
+rake install
+rake generate
+</pre>
+
+
+<p>now if you want to push your blog to Github make a repository USERNAME.github.com in your Github account
+and run</p>
+
+<pre class="sh_bash">
+rake setup_github_pages
+</pre>
+
+
+<p>give the details and run</p>
+
+<pre class="sh_bash">
+rake deploy
+</pre>
+
+
+<p>to push it to your github repository, and open USERNAME.github.com and voila!</p>
+
+<hr>
+
+
+<h2>CNAME</h2>
+
+
+<p>Not only this, even if you want to use your custom domain for your blog, it&#8217;s just two step away.</p>
+
+<ul>
+<li> Make a file <strong>CNAME</strong> in site root, with your domain name as content i.e. mydomain.com
+<li> Make a A record in your domain settings pointing to Github which is <code>204.232.175.78</code> (at the time of writing, check <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">here</a> for latest details).
+</ul>
+
+
+<p>and one thing which you would start feeling and enjoying just as you start using Octopress is you would have a complete control over your blog, you decide it entirely, how it looks, what it does and which code goes where. It&#8217;s based on a very powerful blog engine, Jekyll.</p>
+
+<hr>
+
+
+<h2>Finally</h2>
+
+
+<p>Here is the final landing:</p>
+
+<ul class="reasons">
+<li> Static pages, no need of PHP server for hosting</li>
+<li> No database, no hassle of backing it up etc, you blog is with you all the time </li>
+<li> Posting just became more efficient and enjoyable, fire up the terminal and open your favorite editor and enjoy! </li>
+<li> HTML files are great for caching </li>
+<li> Free hosting and unlimited bandwidth </li>
+<li> Ultimate control over my blog</li>
+</ul>
+
+
+<p>Blogging is just a breeze now. I love you Octopress!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Richard Feynman way of learning better and faster]]></title>
+    <link href="http://panks.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster/"/>
+    <updated>2012-12-13T05:10:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster</id>
+    <content type="html"><![CDATA[<p><list>
+<li>Step 1. <strong>Choose the concept you want to understand</strong><br></li>
+Take a blank piece of paper and write that concept at the top of the page.</p>
+
+<br>
+
+
+<p><li>Step 2. <strong>Pretend you’re teaching the idea to someone else</strong><br></li>
+Write out an explanation of the topic, as if you were trying to teach it to a new student. When you explain the idea this way you get a better idea of what you understand and where you might have some gaps.</p>
+
+<!--more-->
+
+
+<br>
+
+
+<p><li>Step 3. <strong>If you get stuck, go back to the book</strong><br>
+Whenever you get stuck, go back to the source material and re-learn that part of the material until you get it enough that you can explain it on paper.</p>
+
+<br>
+
+
+<p><li>Step 4. <strong>Simplify your language</strong><br>
+The goal is to use your words, not the words of the source material. If your explanation is wordy or confusing, that’s an indication that you might not understand the idea as well as you thought – try to simplify the language or create an analogy to better understand it.
+</list></p>
+
+<center><br>
+<iframe class="bd" width="640" height="360" src="http://www.youtube.com/embed/FrNqSLPaZLc?rel=0" frameborder="0" allowfullscreen></iframe>
+</center>
+
+
+<br>
+
+
+<p>Notes: <a href="http://www.scotthyoung.com/mit/801-notes.pdf">http://www.scotthyoung.com/mit/801-notes.pdf</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Search engines for deep web]]></title>
+    <link href="http://panks.github.com/blog/2012/08/12/search-engines-for-deep-web/"/>
+    <updated>2012-08-12T14:36:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/08/12/search-engines-for-deep-web</id>
+    <content type="html"><![CDATA[<p>The Deep Web (also called the Deepnet, the Invisible Web, the Undernet or the hidden Web) is World Wide Web content that is not part of the Surface Web, which is indexed by standard search engines. It represents a gargantuan part of the internet which is not accessible through regular searches via google or other search engines.</p>
+
+
+<br>
+
+
+<p>Searching on the Internet today can be compared to dragging a net across the surface of the ocean. While a great deal may be caught in the net, there is still a wealth of information that is deep, and therefore, missed. The reason is simple: Most of the Web’s information is buried far down on dynamically generated sites, and standard search engines never find it.</p>
+
+
+<!--more-->
+
+
+<br>
+
+
+<p>So How do we access or search info from deep web? Well there are few special search engines available which can give you some glimps of it, I would list a few of them below:</p>
+
+
+<p>&nbsp;</p>
+
+
+<p><list>
+<li><a href="http://aip.completeplanet.com/">Complete planet</a> - General purpose for dynamic databases</li>
+<li><a href="http://vlib.org/">WWW virtual library</a> - The oldest catalog on the web! by Tim Berners-Lee, the creator of the web</li>
+<li><a href="http://infomine.ucr.edu/">Infomine</a> - Built by a pool of libraries in US, mostly academic purpose</li>
+<li><a href="http://www.infoplease.com/index.html">InfoPlease</a> - For encyclopedias, atlas, biographies etc</li>
+<li><a href="http://www.deeppeep.org/">DeepPeep</a> - Mostly for fetching databases and web services info</li>
+<li><del><a href="http://www.incywincy.com/">IncyWincy</a> - It’s a serching for search engines meta-data</del> Closed</li>
+<li><a href="http://www.deepwebtech.com/">DeepWeb</a> - Covers Science, Medicine and Business and have 5 sub-search engines</li>
+<li><a href="http://www.scirus.com/srsapp/">Scirus</a> - More inclined toward scientific info</li>
+<li><a href="http://www.techxtra.ac.uk/index.html">TechXtra</a> - Mostly for mathematics and computing needs</li>
+</list></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Add post to your wordpress Blog using python script]]></title>
+    <link href="http://panks.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script/"/>
+    <updated>2012-06-12T08:00:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script</id>
+    <content type="html"><![CDATA[<p> <p>I was searching for some way(read script) to automatically transfer/add post to my WordPress blog from another site. The main mission was to transfer around 500 posts to wordpress and no way I was going to do it manually.</p>
+ <p>On googling a little bit I got to know wordpress has it&#8217;s own api which uses xlrpc interface for communicating to blog and I can use that to automate my job. Below is the script I used. I just set the vars and loops and started it in terminal and voila! within ~30 min the new wordpress was up and running proudly with 500 new posts.</p></p>
+
+<!--more-->
+
+
+<p> <p>Find the script below.<br />
+ It uses xmlpclib, read about it <a href="http://codex.wordpress.org/XML-RPC_Support">here.</a></p></p>
+
+<center><img class="bd" src="http://panks.github.com/images/posts/wordpressicon.png" height=40% width=40%></center>
+
+
+<br>
+
+
+<p>For using it you need to:</p>
+
+
+<p>1. Enable XML-RPC functionality in your blog: go to <a title="Settings Writing Screen" href="http://codex.wordpress.org/Settings_Writing_Screen#Remote_Publishing">Settings &gt; Writing &gt; Remote Publishing</a> and check the checkbox.</p>
+
+
+<p>2. Install <code>python</code> and <a href="http://sourceforge.net/projects/py-xmlrpc/">xmlpc</a>.</p>
+
+
+<p>3. You are all set to go.</p>
+
+
+<p>You may also add custom date and time to your posts.</p>
+
+
+
+
+<pre class="sh_python">
+import datetime, xmlrpclib
+
+wp_url = "http://www.yourblog.com/xmlrpc.php"
+wp_username = "USERNAME"
+wp_password = "PASSWD"
+wp_blogid = ""
+status_draft = 0
+status_published = 1
+
+server = xmlrpclib.ServerProxy(wp_url)
+
+title = "Title with spaces"
+content = "Body with lots of content"
+date_created = xmlrpclib.DateTime(datetime.datetime.strptime("2011-10-20 21:08", "%Y-%m-%d %H:%M"))
+categories = ["category here"]
+tags = ["sometag", "othertag"] 
+data = {'title': title, 'description': content, 'dateCreated': date_created, 'categories': categories, 'mt_keywords': tags}
+
+post_id = server.metaWeblog.newPost(wp_blogid, wp_username, wp_password, data, status_published)
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy your cloud apps for free]]></title>
+    <link href="http://panks.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free/"/>
+    <updated>2012-05-31T07:26:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free</id>
+    <content type="html"><![CDATA[<p>If you want to host you webapp somewhere and test/present it for
+free, you can use the free service given by Heroku or Openshift by Red
+Hat.</p></p>
+
+<p>Heroku – <a href="http://www.heroku.com/">www.heroku.com</a> – is a 
+good place to get a free web host. It supports most of the web 
+programming languages like Ruby, Node.js, Clojure, Java, Python, and 
+Scala. If you need database you get a 5 MB database for free. You just 
+need to push your app to your server via git to deploy it.</p>
+
+
+<!--more-->
+
+
+<p>You can get started with heroku here – <a href="http://devcenter.heroku.com/articles/quickstart">http://devcenter.heroku.com/articles/quickstart</a>.
+<center><br><img  src="http://panks.github.com/images/posts/250px-OpenShift-LogoType.svg.png" class="bd"></center><br>
+You would also learn how to use git (a version control software) to 
+be able to deploy your application on heroku. For the first timers, it 
+would take some time to get your application running on heroku. Once you
+ are done, you will have a <a href="">http://&lt;some_arbitrary_name_if_you_have_not_specified&gt;.herokuapp.com</a> kind of url to access your application.</p>
+
+
+<br>
+
+
+<p>OpenShift – <a href="http://openshift.redhat.com/">www.openshift.redhat.com</a> is a similar (free) service . Choose the express option at <a href="https://openshift.redhat.com/app/platform">https://openshift.redhat.com/app/platform</a> to get started. It follows similar strategy as that of heroku.</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Host your blog on Github for free]]></title>
+    <link href="http://panks.github.com/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
+    <updated>2012-04-30T07:20:00+05:30</updated>
+    <id>http://panks.github.com/blog/2012/04/30/host-your-blog-on-github-for-free</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/githubicon.png"></center>
+
+
+<br>
+
+
+<p>I recently came across this article about github pages.</p>
+
+<br>
+
+
+<p>If you make a repo with name same as your <strong>username</strong> then the content of the repo is hosted as subdomain <strong>http://YOURUSERNAME.github.com</strong></p>
+
+<br>
+
+
+<p>Read here: <a href="http://help.github.com/pages/">http://help.github.com/pages/</a></p>
+
+<br>
+
+
+<p>So now you can host your blog at Github sub-domain for free and update via Git! cool! B-)</p>
+
+<!--more-->
+
+
+<p>But as Github will not really provide you a server running php, mysql, etc so the limitation is it has to be static, but no worries, <a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap</a> comes to rescue here. It’s a static site generator which would generate the html for you and then you can push it to you blog via git. Bingo!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Expect- talk with programs using scripts]]></title>
+    <link href="http://panks.github.com/blog/2011/12/22/expect-talk-with-programs-using-scripts/"/>
+    <updated>2011-12-22T07:07:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/12/22/expect-talk-with-programs-using-scripts</id>
+    <content type="html"><![CDATA[<p>&#8220;OK! Now I can&#8217;t bear it anymore&#8221; - The condition after our endsems got over, as Insti bandwidth usages was on peak, one had no work other than running behind monkey (yeah we do have monkeys in our campus, all around us, so blessed we are, aren&#8217;t we?) to scare them to death or stick your bum to chair and do some time pass on internet.</p>
+
+<br>
+
+
+<p>But they say there is solution to every problem, here was it.<!--more--> We had access to our departmental network, which uses different proxy server, and since the LAN is common throughout the Insti we could connect to it, to get a little relief in internet speed, obviously everyone could do that, but you don&#8217;t expect students from Bio-tech people to type commands in terminal(they are already happy enough by looking at windows animation), until that&#8217;s the only option to save the human race.</p>
+
+<center><img src="http://panks.github.com/images/posts/batmantux.png"></center>
+
+
+<p> <br></p>
+
+<br>
+
+
+<p>But for lazzy bum like me it was painful to type the command to ssh to the departmental computers every time I login to my laptop. So I wrote a script to do that, obviously auto-run on system start.
+But there was a catch, we had to input our login password while connecting to departmental computers and there was no way in linux terminal to supply the password automatically on request :(</p>
+
+<br>
+
+
+<p>When will google come to work?! I googled it and got to know about Expect, it is a toolkit for automating interactive programs, such as TELNET and FTP, written by Don Libes. It knows what can be expected from a program and what the correct response would be.
+You can this page to get an idea of how expect works, it contains six basic examples: <a href="http://www.thegeekstuff.com/2010/10/expect-examples/">http://www.thegeekstuff.com/2010/10/expect-examples/</a></p>
+
+<br>
+
+
+<p>For more info you can click at: <a href="http://oreilly.com/catalog/expect/chapter/ch03.html">http://oreilly.com/catalog/expect/chapter/ch03.html</a></p>
+
+<br>
+
+
+<p>
+<strong>edit:</strong> Instead of running the script of system startup, you can ask network manager to do it for you, that way even if the network goes off while you are working and comes back again, you wold be reconnected. You can put your script in <strong>/etc/network/if-up.d</strong> on debian based distros and in <strong>/etc/NetworkManager/dispatcher.d/</strong> in fedora/redhat based distros, that would be executed when the network connects. If you plan to put more than one script you can specify the sequence by naming them
+starting with a number between 1 and 99, they would be executed in ascending order, ex. <code>5-myscript.sh</code>, default is 50.
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git basic commands]]></title>
+    <link href="http://panks.github.com/blog/2011/12/11/git-basic-commands/"/>
+    <updated>2011-12-11T07:11:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/12/11/git-basic-commands</id>
+    <content type="html"><![CDATA[<p>While I was working during my winter break at home I 
+had to use git a lot for debugging KDE apps. So, I thought of writing 
+this article. It will help newbies a lot to just read this single page 
+and get started with. No need to read that GIT book or tutorial if you 
+are short of time and you need only basic stuff for your job.</p>
+
+
+
+
+<p>So first of all,</p>
+
+
+<br>
+
+
+<center><img src="http://panks.github.com/images/posts/github-logo.png"></center>
+
+
+<br>
+
+
+<p><strong>What is Git?</strong></p>
+
+
+<!--more-->
+
+
+<p>Git is a&nbsp;distributed version control system, 
+which is designed by the same person who made 
+the&nbsp;Linux&nbsp;kernel, Linus Torvalds. Written completely in C.</p>
+
+
+<p></p>
+
+
+<br>
+
+
+<p><strong>What is Version Control?</strong></p>
+
+
+<p>When editing, you can&nbsp;<em>Save As…</em>&nbsp;a 
+different file, or copy the file somewhere first before saving if you 
+want to savour old versions. You can compress them too to save space. 
+This is a primitive and labour-intensive form of version control. 
+Computer games improved on this long ago, many of them providing 
+multiple automatically timestamped save slots.</p>
+
+
+<p>Let’s make the problem slightly tougher. Say you have a
+ bunch of files that go together, such as source code for a project, or 
+files for a website. Now if you want to keep an old version you have to 
+archive a whole directory. Keeping many versions around by hand is 
+inconvenient, and quickly becomes expensive.</p>
+
+
+<p>With some computer games, a saved game really does 
+consist of a directory full of files. These games hide this detail from 
+the player and present a convenient interface to manage different 
+versions of this directory.</p>
+
+
+<p>Version control systems are no different. They all 
+have nice interfaces to manage a directory of stuff. You can save the 
+state of the directory every so often, and you can load any one of the 
+saved states later on. Unlike most computer games, they’re usually smart
+ about conserving space. Typically, only a few files change from version
+ to version, and not by much. Storing the differences instead of entire 
+new copies saves room.</p>
+
+
+<p></p>
+
+
+<br>
+
+
+<p><strong>What is Distributed Control System?</strong></p>
+
+
+<p>Now lets change the situation a little bit. Imagine a 
+very difficult computer game. So difficult to finish that many 
+experienced gamers all over the world decide to team up and share their 
+saved games to try to beat it. Speedruns are real-life examples: players
+ specializing in different levels of the same game collaborate to 
+produce amazing results.</p>
+
+
+<p>How would you set up a system so they can get at each other’s saves easily? And upload new ones?</p>
+
+
+<p>In the old days, every project used centralized 
+version control. A server somewhere held all the saved games. Nobody 
+else did. Every player kept at most a few saved games on their machine. 
+When a player wanted to make progress, they’d download the latest save 
+from the main server, play a while, save and upload back to the server 
+for everyone else to use.</p>
+
+
+<p>What if a player wanted to get an older saved game for
+ some reason? Maybe the current saved game is in an unwinnable state 
+because somebody forgot to pick up an object back in level three, and 
+they want to find the latest saved game where the game can still be 
+completed. Or maybe they want to compare two older saved games to see 
+how much work a particular player did.</p>
+
+
+<p>There could be many reasons to want to see an older 
+revision, but the outcome is the same. They have to ask the central 
+server for that old saved game. The more saved games they want, the more
+ they need to communicate.</p>
+
+
+<p>The new generation of version control systems, of 
+which Git is a member, are known as distributed systems, and can be 
+thought of as a generalization of centralized systems. When players 
+download from the main server they get every saved game, not just the 
+latest one. It’s as if they’re mirroring the central server.<br>
+This initial cloning operation can be expensive, especially if there’s a
+ long history, but it pays off in the long run. One immediate benefit is
+ that when an old save is desired for any reason, communication with the
+ central server is unnecessary.So, that’s all about Git and how it 
+works. Now lets get our hands dirty..</p>
+
+
+<br><br>
+
+
+<h2>Prerequisite</h2>
+
+
+<p>1) You need a computer ;), with preferably Linux (any flavor) installed on it. (This post does not deal with <a title="Git for windows" href="http://code.google.com/p/msysgit/">Windows</a>, though you may use the commands given here without any modifications (probably!)).</p>
+
+
+<p>2) You need Git.</p>
+
+
+<p>on Fedora distribution, you may install git using the following command</p>
+
+
+<pre>$ sudo yum install git</pre>
+
+
+<p>On Ubuntu distribution, you may install git using the following command</p>
+
+
+<pre>$ sudo apt-get install git
+$ sudo apt-get install git-core</pre>
+
+
+<p>For other methods and building from source check out <a title="Git dowloads" href="http://git.or.cz/#download">this page</a>.</p>
+
+
+<p>3) You need some project which you are developing (or would be 
+developing) &nbsp;. The project’s language could be anything .. C, C++, 
+D, Python, Perl, HTML, JavaScript, plain text files … you got the idea 
+right?</p>
+
+
+<h2>Let the show begin</h2>
+
+
+<h3>Command 1 : Initializing an empty git repository.</h3>
+
+
+<p>Before you can start using the power of git you need to create an 
+empty repository and tell git which files to track. The first command 
+that I’m presenting initializes an empty git repository.</p>
+
+
+<p>Before executing the command you need to be at base folder of you 
+project. For example if you have all the source code for you project 
+stored here <strong>/home/panks/SourceCode/myProject</strong>, (We’ll call this folder as the <strong>base folder </strong>for ease of discussion), move there first. Now execute the following command once you are in the base folder.</p>
+
+
+<pre>$ git init</pre>
+
+
+<p>This will create an empty repository in the current directory (the base folder).</p>
+
+
+<p>For every project that you want to track using git, go to its base 
+folder and issue this command first and then the next 2 commands 
+presented below.</p>
+
+
+<h3>Command 2 : Adding files to git repository.</h3>
+
+
+<p>The next step is to add files to your git repository, essentially 
+telling git that these are the files we want to keep track of. Execute 
+the following command from the base folder.</p>
+
+
+<pre>$ git add .</pre>
+
+
+<p>This will add all the files from the current folder and sub-folders recursively to the git repository.</p>
+
+
+<h3>Command 3 : The commit command.</h3>
+
+
+<p>This is one command you’ll be using quite often.</p>
+
+
+<p>the above command adds the files but does not commit the changes to 
+the git repository. So you need to issue the following command to make 
+the changes final.</p>
+
+
+<pre>$ git commit -a</pre>
+
+
+<p>This will open a text editor (probably vi) where you can add some 
+comments about this commit. If you prefer not to use the text editor, 
+you can specify the commit message from the command line it self, just 
+use the following format instead of the above one.</p>
+
+
+<pre>$ git commit -a -m "Initial import"</pre>
+
+
+<p>The -m switch is used to specify the commit message. In our case the 
+commit message is “Initial import”. You can put anything between the 
+quotes for your message.</p>
+
+
+<h2>You are ‘all’ ready!</h2>
+
+
+<p>Now open your favorite text editor and start coding. When you feel 
+you have accomplished something or you just want to save the current 
+state of your source code issue the git-commit command as described 
+above. The commit command will create a new checkpoint and save the 
+current status of your source code.</p>
+
+
+<p>Git (like any other version control system) saves all the commits you
+ have done to your source code repository. This enables you to go back 
+and forth between commits and inspect the changes.</p>
+
+
+<p>Now let’s move forward and learn a few more commands.</p>
+
+
+<h3>Command 4 : Viewing the commit log.</h3>
+
+
+<p>You can view all the commits you have done till now using the following command</p>
+
+
+<pre>$ git log</pre>
+
+
+<p>This command shows the commit history with the</p>
+
+
+<p>1) Unique commit hash<br>
+2) Name and email of the person who performed the commit<br>
+3) Date and time of commit<br>
+4) The commit message</p>
+
+
+<p>Of all these, the first item, the unique commit identifier, the SHA1 
+hash is of importance to us. This hash will be used with some of the 
+commands listed next, and is used with a plethora of other git commands,
+ not listed here</p>
+
+
+<h3>Command 5 : Checking the current status.</h3>
+
+
+<p>While coding, you may want to see what all files have changed, before
+ you do a commit to store them in the git repository. This command helps
+ you achieve that.</p>
+
+
+<pre>$ git status</pre>
+
+
+<p>The above command will list all files that have changed since your last commit.</p>
+
+
+<h3>Command 6 : Finding the difference between commits.</h3>
+
+
+<p>Apart from just viewing files that have changed, you may be interested in viewing the actual differences in the source code.</p>
+
+
+<pre>$ git diff</pre>
+
+
+<p>The above command will show a difference ( a diff ) with respect to your last commit and current changes.</p>
+
+
+<p>The diff command can actually be used to compare difference between any commits</p>
+
+
+<p><strong>To view difference between a previous commit and current changes.</strong></p>
+
+
+<pre>$ git diff <em>commit_hash</em></pre>
+
+
+<p>here the <em>commit_hash</em> is the first eight characters (hex 
+digits) of commit hash as shown in the commit log by the git-log 
+command. Yes! you need not specify the full hash, just the first eight 
+digits are good enough.</p>
+
+
+<p><strong>To view differences between two previous commits.</strong></p>
+
+
+<pre>$ git diff <em>commit_hash_1</em> <em>commit_hash_2</em></pre>
+
+
+<p>This command will display differences between the two commits identified by the <em>commit_hash_1</em> and <em>commit_hash_2.</em></p>
+
+
+<h3>Command 7 : Creating branches!</h3>
+
+
+<p>Don’t be scared by the word “branching”, specially if you never dealt
+ with them. Branches are easy to play with and are very useful.</p>
+
+
+<p>Before I show you the command a bit more discussion about branches.</p>
+
+
+<ul>
+<li>- You can view branches as being diversion from the main linear commit tree.</li><br>
+<li>- All branches stem out from the <strong>master branch</strong>, the name given to the main trunk.</li><br>
+<li>- Every branch has it’s own commit log.</li><br>
+<li>- You can have different code in same files across difference 
+branches. (This is the main feature of branching). Actually git goes 
+even further and allows you to have not only different content in files 
+across branches but even different sets of files across different 
+branches.</li><br>
+<li>- At one point of time, you can be sitting only on one branch. What 
+this means is that, the source code from the current branch will be the 
+effective one, the one to which you would be making changes.</li><br>
+</ul>
+
+
+<p><strong>Why use branches?</strong></p>
+
+
+<p>Suppose you have an almost stable source code and you are to release 
+the product in a month or in a week or two. You also have plans to 
+include another great feature into your code, but are afraid it might 
+break your code and your release plans may go hay-wire.</p>
+
+
+<p>This is where branches come into picture. Just create an experimental
+ branch from you main stable trunk ( the one you’ve been working on up 
+till now is the main trunk, the <strong>master</strong> branch). After 
+you have created the experimental branch, you can continue fixing bugs 
+and polishing the code on the main, i.e. the master branch. Meanwhile 
+you can also continue working on the experimental branch without 
+affecting a line of code on the master branch.</p>
+
+
+<p>In the end, if you find that the experimental feature is working good
+ enough, merge it into the master branch and release your product. If 
+the experimental feature didn’t quite work out, you can still release 
+the product from the master branch. The experimental branch is still 
+there so you can continue working on it till it gets stable.</p>
+
+
+<p>This is one scenario (and the most often reason, though not the only one), to create branches.</p>
+
+
+<p>Okay now, back to commands . Issue the following command when you want to create a branch.</p>
+
+
+<p><strong>Creating a branch</strong></p>
+
+
+<pre>$ git branch <em>branch_name</em></pre>
+
+
+<p><em>branch_name </em>could be anything that you wish, for example:</p>
+
+
+<pre>$ git branch <strong>experimental_feature </strong></pre>
+
+
+<p><strong>Branching a branch or “I want more branches”.<br>
+</strong></p>
+
+
+<p>You can create as many branches from inside any branch you want, creating a very dense tree if you like.</p>
+
+
+<p>Just move inside (check-out that branch, see command 8 below) and issue the branch creation command.</p>
+
+
+<h3>Command 8 : Moving to a branch and listing all branches</h3>
+
+
+<p>Once you have created the branch move to it by issuing the command listed below. <strong>Always</strong> Make sure you do a commit before you issue this command or else changes will move across branches. <em>Make this a habit!</em></p>
+
+
+<pre>$ git checkout branch_name</pre>
+
+
+<p>Here the branch name is the branch where you want to move. Once 
+checked-out, you can view staus, log, diff etc, using the commands 
+presented earlier.</p>
+
+
+<p>To go back to the <strong>master</strong> branch (the main trunk) issue the following command. (Again make sure you had issued the commit command)</p>
+
+
+<pre>$ git checkout master</pre>
+
+
+<p><strong>Listing all branches</strong></p>
+
+
+<p>Issue the following command to see all available branches in the current repository.</p>
+
+
+<pre>$ git branch</pre>
+
+
+<h3>Command 9 : Merging two branches</h3>
+
+
+<p>Move to (checkout) the branch with which you want the merge to happen and issue the following command.</p>
+
+
+<pre>$ git merge branch_name</pre>
+
+
+<p>This will merge the branch branch_name with the current branch.</p>
+
+
+<p>For example if you want to merger the “experimental_feature” branch with the master branch, issue the following commands</p>
+
+
+<pre>$ git checkout master
+$ git merge experimental_feature</pre>
+
+
+<p>Git will notify you with any conflicts it cannot resolve automatically (if any). You can then resolve the conflicts manually.</p>
+
+
+<p><strong>Deleting a branch</strong></p>
+
+
+<p>After the merge is done you can delete the experimental branch if you wish by issuing the command</p>
+
+
+<pre>$ git branch -d experimental_branch</pre>
+
+
+<p>The above command will only delete the branch if it is fully merged 
+with the current branch’s HEAD. HEAD is the current position in your 
+branch, the latest commit.</p>
+
+
+<h3>Command 10 : Deleting stuff from the repository.</h3>
+
+
+<p>Issue the following command if you do not want git to keep track of a
+ file or folder and (this is the opposite of the git-add command). The 
+file stays in the working directory, on the disk.</p>
+
+
+<pre>$ git rm --cached path/to/the/folder_or_file</pre>
+
+
+<p>The <em>git-rm</em> command removes the files from the repository for current HEAD <em>only</em>; previous revisions/commits will still have the file.</p>
+
+
+<h2>That’s it, you’re done!</h2>
+
+
+<p>Before I leave you a few more command/features that may interest you, but are not totally necessary as of now.</p>
+
+
+<h3>A graphical repository viewer</h3>
+
+
+<p>To invoke a graphical repository viewer, invoke the following command</p>
+
+
+<pre>$ gitk</pre>
+
+
+<h3>Git – Graphical user interface</h3>
+
+
+<p>For those who prefer GUI, you can install a graphical front end to git.</p>
+
+
+<p><strong>On Fedora</strong></p>
+
+
+<pre>$ yum install git-gui</pre>
+
+
+<p><strong>On Ubuntu</strong></p>
+
+
+<pre>$ apt-get install git-gui</pre>
+
+
+<p>Run the gui by issuing the following command</p>
+
+
+<pre>$ git-gui</pre>
+
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cron job to schedule your jobs]]></title>
+    <link href="http://panks.github.com/blog/2011/11/15/cron-job-to-schedule-your-jobs/"/>
+    <updated>2011-11-15T08:20:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/11/15/cron-job-to-schedule-your-jobs</id>
+    <content type="html"><![CDATA[<p>While writing an Application for an Advertising company I came across this utility, this called <code>Cron</code>.
+It’s a <a href="http://gnu.org">GNU-Linux</a> application to run programs or scripts at specified date/time, so basically you can schedule you jobs using Cron.</p>
+
+<br>
+
+
+<p><strong>How to use it:</strong>
+It’s actually a demon. (In case you don’t know) <a href="http://en.wikipedia.org/wiki/Daemon_(computing)">Demons</a> are applications which are started once to keep them running in background and sit idle until they are required. It is already installed in most of the Linux distributions.</p>
+
+<!--more-->
+
+
+<br>
+
+
+<p>In the <code>/etc</code> directory you will probably find some sub directories called ‘<code>cron.hourly</code>‘, ‘<code>cron.daily</code>‘, ‘<code>cron.weekly</code>‘ and ‘<code>cron.monthly</code>‘. If you place a script into one of those directories it will be run either hourly, daily, weekly or monthly, depending on the name of the directory.</p>
+
+<br>
+
+
+<center><img class="bd" src="http://panks.github.com/images/posts/cron.png" height=70% width=70%></center>
+
+
+<br>
+
+
+<p>If you want more flexibility than this, you can edit a crontab (the name for cron’s config files). The main config file is normally <code>/etc/crontab</code>.</p>
+
+<p>On a default RedHat install, the crontab will look something like this:</p>
+
+<pre class="sh_bash">
+root@pingu # cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+# run-parts
+01 * * * * root run-parts /etc/cron.hourly
+02 4 * * * root run-parts /etc/cron.daily
+22 4 * * 0 root run-parts /etc/cron.weekly
+42 4 1 * * root run-parts /etc/cron.monthly
+</pre>
+
+
+<p>The first part is almost self explanatory; it sets the variables for cron.</p>
+
+<br><br>
+
+
+<p><strong>SHELL</strong> is the ‘shell’ cron runs under. If unspecified, it will default to the entry in the /etc/passwd file.</p>
+
+<br>
+
+
+<p><strong>PATH</strong> contains the directories which will be in the search path for cron</p>
+
+<br>
+
+
+<p>e.g if you’ve got a program ‘foo’ in the directory /usr/cog/bin, it might be worth adding /usr/cog/bin to the path, as it will stop you having to use the full path to ‘foo’ every time you want to call it.</p>
+
+<br>
+
+
+<p><strong>MAILTO</strong> is who gets mailed the output of each command. If a command cron is running has output (e.g. status reports, or errors), cron will email the output to whoever is specified in this variable. If no one if specified, then the output will be mailed to the owner of the process that produced the output.</p>
+
+<br>
+
+
+<p><strong>HOME</strong> is the home directory that is used for cron. If unspecified, it will default to the entry in the /etc/passwd file.</p>
+
+<br>
+
+
+<p>Now for the more complicated second part of a crontab file. An entry in cron is made up of a series of fields, much like the /etc/passwd file is, but in the crontab they are separated by a space. There are normally seven fields in one entry. The fields are:</p>
+
+<br>
+
+
+<p>minute hour dom month dow user cmd</p>
+
+<br><br>
+
+
+<p><strong>minute</strong> This controls what minute of the hour the command will run on, and is between ’0′ and ’59′</p>
+
+<br>
+
+
+<p><strong>hour</strong> This controls what hour the command will run on, and is specified in the 24 hour clock, values must be between 0 and 23 (0 is midnight)</p>
+
+<br>
+
+
+<p><strong>dom</strong> This is the Day of Month, that you want the command run on, e.g. to run a command on the 19th of each month, the dom would be 19.</p>
+
+<br>
+
+
+<p><strong>month</strong> This is the month a specified command will run on, it may be specified numerically (0-12), or as the name of the month (e.g. May)</p>
+
+<br>
+
+
+<p><strong>dow</strong> This is the Day of Week that you want a command to be run on, it can also be numeric (0-7) or as the name of the day (e.g. sun).</p>
+
+<br>
+
+
+<p><strong>user</strong> This is the user who runs the command.</p>
+
+<br>
+
+
+<p><strong>cmd</strong> This is the command that you want run. This field may contain multiple words or spaces.</p>
+
+<br><br>
+
+
+<p>If you don’t wish to specify a value for a field, just place a * in the field.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<br>
+
+
+<pre class="sh_bash">
+01 * * * * root echo “This command is run at one min past every hour”
+17 8 * * * root echo “This command is run daily at 8:17 am”
+17 20 * * * root echo “This command is run daily at 8:17 pm”
+00 4 * * 0 root echo “This command is run at 4 am every Sunday”
+* 4 * * Sun root echo “So is this”
+42 4 1 * * root echo “This command is run 4:42 am every 1st of the month”
+01 * 19 07 * root echo “This command is run hourly on the 19th of July”
+</pre>
+
+
+<br> 
+
+
+<p><strong>Notes:</strong></p>
+
+<p>Under dow 0 and 7 are both Sunday.</p>
+
+<br>
+
+
+<p>If both the dom and dow are specified, the command will be executed when either of the events happen.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<br>
+
+
+<pre class="sh_bash">
+* 12 16 * Mon root cmd
+</pre>
+
+
+<br>
+
+
+<p>Will run cmd at midday every Monday and every 16th, and will produce the same result as both of these entries put together would:</p>
+
+<br>
+
+
+<pre class="sh_bash">
+* 12 16 * * root cmd
+* 12 * * Mon root cmd
+</pre>
+
+
+<br><br>
+
+
+<p>Vixie Cron also accepts lists in the fields. Lists can be in the form, 1,2,3 (meaning 1 and 2 and 3) or 1-3 (also meaning 1 and 2 and 3).</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<pre class="sh_bash">
+59 11 * * 1,2,3,4,5 root backup.sh
+</pre>
+
+
+<p>Will run backup.sh at 11:59 Monday, Tuesday, Wednesday, Thursday and Friday, as will:</p>
+
+<pre class="sh_bash">
+59 11 * * 1-5 root backup.sh
+</pre>
+
+
+<br><br>
+
+
+<p>Cron also supports ‘step’ values.</p>
+
+<br>
+
+
+<p>A value of <em>/2 in the dom field would mean the command runs every two days and likewise, </em>/5 in the hours field would mean the command runs every 5 hours.</p>
+
+<br>
+
+
+<p>e.g.</p>
+
+<pre class="sh_bash">
+* 12 10-16/2 * * root backup.sh
+</pre>
+
+
+<p>is the same as:</p>
+
+<pre class="sh_bash">
+* 12 10,12,14,16 * * root backup.sh
+</pre>
+
+
+
+
+<pre class="sh_bash">
+*/15 9-17 * * * root connection.test
+</pre>
+
+
+<p>Will run connection.test every 15 mins between the hours or 9am and 5pm</p>
+
+<p>Lists can also be combined with each other, or with steps:</p>
+
+<pre class="sh_bash">
+* 12 1-15,17,20-25 * * root cmd
+</pre>
+
+
+<p>Will run cmd every midday between the 1st and the 15th as well as the 20th and 25th (inclusive) and also on the 17th of every month.</p>
+
+<pre class="sh_bash">
+* 12 10-16/2 * * root backup.sh
+</pre>
+
+
+<p>is the same as:</p>
+
+<pre class="sh_bash">
+* 12 10,12,14,16 * * root backup.sh
+</pre>
+
+
+<p>When using the names of weekdays or months, it isn’t case sensitive, but only the first three letters should be used, e.g. Mon, sun or Mar, jul.</p>
+
+<br>
+
+
+<p>Comments are allowed in crontabs, but they must be preceded with a &#8217;<code>#</code>’, and must be on a line by them self.<br></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Richard Stallman at IIT Madras]]></title>
+    <link href="http://panks.github.com/blog/2011/11/06/richard-stallman-at-iit-madras/"/>
+    <updated>2011-11-06T07:33:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/11/06/richard-stallman-at-iit-madras</id>
+    <content type="html"><![CDATA[<p>Today I got to meet the man who started it all.. who started the 
+concept of “FREE SOFTWARE”… who started the GNU project, Richard 
+Stallman.</p>
+
+
+<center><img src="http://panks.github.com/images/posts/stallman.jpg" height=40% width=40%></center>
+
+
+<br>
+
+
+<p>He is a programmer and philosopher who started the concept of ‘Free Software’. According to him the software should be free (here free implies freedom). He talks about four types of freedom:</p>
+
+
+<!--more-->
+
+
+<p>0. Freedom to use the software the way users wants.</p>
+
+
+<p>1. Freedom to study the code and modify it so as to suit your needs.</p>
+
+
+<p>2. Freedom to help your friends i.e. freedom to share the copy of the software</p>
+
+
+<p>3. Freedom to modify and distribute you own version of the software when you want</p>
+
+
+<br>
+
+
+<p>It all starts back in 1983, all the computers require the a basic software to function/operate AKA Operating System. And all the Operating Systems back then were proprietary softwares.</p>
+
+
+<p>Stallman defines proprietary softwares as jail, he says most of the proprietary software are malware which have potential to send your personal data to remote server (of course to the developer). He also says most of the proprietary applications have <a href="http://en.wikipedia.org/wiki/Backdoor_(computing)">backdoors</a>, using which the developer can make changes to your system or install application without even seeking the permission of the user. The biggest malware he claims is
+“Microsoft Windows”, there are backdoors in Windows using which Microsoft can install any application on you system without even letting you know and can spy on you, same goes for Mac OS too. He even recommends not use Google Chrome as its source is not public, though Linux guys are at peace at chromium is open source.</p>
+
+
+<p>So, Stallman didn&#8217;t like the idea that proprietary were keeping the people from excising their full rights over the application. He shared his ideas of free software with people and he formed a small community, sent mail to politician, used banners and all sort of stuff to make people realize that they are being abide of their freedom and make them realize they are in a trap. But nothing much could happen because of the small size of the community. So he himself being a programmer who
+could write a complete OS, decide to write one and make it free for people, make its source free to study, modify and share.</p>
+
+
+<br>
+
+
+<p>He started the GNU project in 1983 when he was in MIT, the goal was to create a Unix-like Operating System, Unix was chosen because Unix was the most popular OS back then and Stallman wanted a OS which could support maximum no of machines running, same architecture and same commands were used so that people can shift from Unix to this new Operating System without any hassle. By 1992 they were ready with almost all the component of the OS but one major part was still to be coded, The
+Kernel. Then came in picture the guy called Linus Torvalds, he had already written a kernel called ‘Linux’ but the source was not open to public, in 1992 Linus made Linux open and the same kernel combined with the other package written by Richard Stallman and his fellow mates to give birth to a new OS which was completely free, free to use the way you want, free to study how it works, free to modify and free to share. It was named GNU-Linux.</p>
+
+
+<br>
+
+
+<p>But unfortunately to most of the people think it’s only Linux and Linus is <strong>THE</strong> guy.</p>
+
+
+<p>Stallman also started free software moment with the goal of ensuring software users’ four basic freedoms: the freedom to run their software, to study and change their software, and to redistribute copies with or without changes. In 1985 he founded the FSF (Free Software Foundation) to support free software moment.</p>
+
+
+<br>
+
+
+<p>He is the main author of several copy left licenses including the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>, the most widely used free software license. also developed a number of pieces of widely used software, including the original Emacs, the GNU Compiler Collection, the GNU Debugger, and various tools in the GNU coreutils.</p>
+
+
+<br>
+
+
+<p>Visit <a href="http://www.gnu.org">GNU</a> website for more info.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android this first SummeR]]></title>
+    <link href="http://panks.github.com/blog/2011/08/14/android-this-first-summer/"/>
+    <updated>2011-08-14T06:42:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/08/14/android-this-first-summer</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/android.png"></center>
+
+
+<br>
+
+
+<p>phew..!! finally it gets over, the sleepless nights fighting with end-sems. Although reading one night before the exam is a big pain but still invariably this habit is noticed in almost all the engineering colleges and in almost all the students with the exception of only a few who make it to 9+ points as CGPA.</p>
+
+<p>While I was wondering today about what i’m going to do in holidays as it’s gonna be long one (3 months), one friend of mine suggested a idea.
+<em>Android App</em></p>
+
+<!--more-->
+
+
+<p>Hey! that’s cool! isn’t it. Obviously Android is one of the coolest thing out there nowadays and developing for android at the end of first year of college seems a nice idea.. :)</p>
+
+<p>The proposal was to develop and an app which will remind you of something, when you reach a particular  location. Like if you wanna fetch something from market when you go next time, you should be able to set a reminder in the app using map or some such thing so that when you visit the market next it will give you a notification about the stuff you wanna buy..
+Cool..!! B-)
+I too forget lots of stuff when I visit my grandma’s place down the streets and then I regret after coming back home. An app of such kind would be a lot helpful in lot many ways.</p>
+
+<p>After googling for some 30 mins I got know a little more about the app, at least how we can put it formally ;) - Proximity Based Reminder App
+I got to know about Google API for Android development. I guess I need to use eclipse as an IDE.
+It’s goona be in JAVA with XML for app layout.</p>
+
+<p>I bookmarked a few sites too:</p>
+
+<p><a href="http://marakana.com/training/android/">
+http://marakana.com/training/android/</a><br>
+<a href="http://www.androidtutorials.org/">
+http://www.androidtutorials.org/</a><br>
+and of course: <a href="http://developer.android.com/index.html">http://developer.android.com/index.html</a><br> (it has some very nice samples)</p>
+
+<p>and a book: Professional Android development (You can get if from amazon here. I got a free pdf of it)</p>
+
+<p>it’s kind of all set, need to give a start. Flying home day after. Will start from next week hopefully.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vim – Interactive tutorial]]></title>
+    <link href="http://panks.github.com/blog/2011/07/29/vim-interactive-tutorial/"/>
+    <updated>2011-07-29T07:38:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/07/29/vim-interactive-tutorial</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/vimlogo.png" height=30% width=30% ></center>
+
+
+<br>
+
+
+<p>Vim is probably the most configurable text editor know. It was written by <a title="Bram Moolenaar" href="http://en.wikipedia.org/wiki/Bram_Moolenaar">Bram Moolenaar</a>
+ and first released publicly in 1991 but it’s is in active development
+and it used across several plaforms including Linux, Windows and Mac.
+It is widely used in developer community due to its:</p>
+
+<!--more-->
+
+
+<br>
+
+
+<p><list>
+<li><strong>Flexible multiple document interface</strong>: In Vim, your
+files and unsaved documents are referred to as buffers. The editor gives
+ you a tremendous amount of control over how your buffers are displayed
+on the screen</li><br>
+<li><strong>Modal editing with sophisticated keyboard shortcuts</strong>:
+ Vim has separate interaction modes for text input and text editing.
+Insert mode behaves largely as you would expect a regular text editor to
+ work—commands are performed with conventional keyboard shortcuts and
+characters are appended to the buffer as you press the associated keys.
+In the “normal” mode, however, sequences of key presses perform commands</li><br>
+<li><strong>Multiple clipboards</strong>: Instead of a conventional
+clipboard, Vim stores copied text with a mechanism that it calls
+registers. This effectively acts like a clipboard multiplexer. The
+contents of the registers persist between uses of Vim, which means that
+they are preserved when you quit and will still be there when you open
+the editor again.</li><br>
+<li><strong>Macros</strong>: Vim has a macro system that allows you to record keypresses for later playback.</li><br>
+<li><strong>Extremely powerful search capabilities</strong>: Vim has
+some very sophisticated tools for automated search and replace,
+including extensive support for regular expressions. It also has a
+built-in version of the <code>grep</code> command, which integrates with
+ Vim’s enormously convenient quickfix feature—a special buffer that
+shows you a list of results and allows you to conveniently jump between
+them.</li><br>
+<li><strong>Extremely rich extensibility</strong>: Vim is prodigiously
+scriptable and highly conducive to automation. It has its own native
+scripting language with container types, a unique variable scoping
+model, and a bunch of useful Vim-specific functionality</li><br>
+<li><strong>Portability</strong>: Vim will work almost everywhere that
+you do. Vim is widely used on Windows, Linux, and Mac OS X and is
+available for many other platform. Users can run it from the terminal or
+ operate it with a native graphical interface on all three major
+operating systems.
+</li><br>
+</list></p>
+
+<p>But starting Vim for the first time is painful for everyone. Here I
+ got an interactive online tutorial on Vim, which is fun to try
+out:&nbsp;<a href="http://www.openvim.com/tutorial.html">http://www.openvim.com/tutorial.html</a>
+If you are starting with Vim, I would recommend you to try it out once, just for fun.. :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java vs C++]]></title>
+    <link href="http://panks.github.com/blog/2011/03/11/java-vs-c-plus-plus/"/>
+    <updated>2011-03-11T07:30:00+05:30</updated>
+    <id>http://panks.github.com/blog/2011/03/11/java-vs-c-plus-plus</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.github.com/images/posts/FlamingGodzillaSmall.png"></center>
+
+
+<br>
+
+
+<p>Phewwww….. So finally this marks an end to my research on the
+hottest topic of discussion, i.e. being a first/into-second year student
+ at IIT Madras, which language should i take up seriously and try to be
+proficient in JAVA or C++….
+Since childhood I had a passion for this field, I always used to be
+ in top most students of the class as far as Computer Science course was
+ concerned. Doing random stuff with computer, reading various articles,
+playing around with my friends, stealing their social-networking site’s
+passwd, tinkering and hacking my own system and mobile phones, reading
+book on various programming language… etc..etc.. became my hobby…</p>
+
+<!--more-->
+
+
+<p>But now those days were gone (good old days) I’m in college… I need
+ to proceed toward something specific, which is fruitful, I can’t just
+keep playing around with random things which attract me… And so the
+first step was to get a hand at, at least one programming language…’But
+which one??’ the first question came to my mind… I was able to burn down
+ the problem of ‘Which one??’ to ‘Java or C++’ but couldn’t move
+further…
+Well, I tell u it was not an easy task, after going through, millions of articles like,<br>
+‘C++ Versus Java’<br>
+‘Java Versus C++’<br>
+‘C++ without guns, knives and clubs’<br>
+‘Programming Careers: Java vs C++’<br>
+‘Is Java really slow’<br>
+‘Why Java is Not My Favorite Programming Language’<br>
+‘Hottest programming language of the year’<br>
+blah… blah….<br></p>
+
+<br>
+
+
+<p>thousands of wikis like,<br>
+‘Comparison of programming languages’<br>
+‘Comparison of Java and C++’<br>
+‘How Java’s Floating-Point Hurts Everyone Everywhere’ lol..<br>
+‘C++ vs Java performance’<br>
+blah…blah…<br></p>
+
+<br>
+
+
+<p>hundreds of books which says,<br>
+‘Java and C++ A critical comparison’<br>
+‘Java pulling ahead? Java versus C++ benchmarks’<br>
+blah… blah…<br></p>
+
+<br>
+
+
+<p>and asking a few people in my insti and out of insti… all the
+answers which I got were&nbsp;blurry&nbsp;and in many cases people will
+return question me, what would you like to go for, some would say it
+doesn’t matter pickup one, language is not a concern for a good
+programmer get your concept clear, some would say there is more demand
+for JAVA programmers out there so you should probably start with that
+and it will even help you in intern, some would say C++ is a great
+foundation, and that learning Java would be easier once you know C++,
+some would say pack both maccha go for c#… :(
+  poor me…K agreed both are nice languages and some time its like
+comparing and Apple with an Orange but after all there has to be an
+answer, there will be only one language which I will be going with for
+now… Which one??<br>
+But after going through the article ‘<strong><a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of JavaSchools</a></strong>‘ by ‘Joel Spolsky‘ I got some idea on which way I should proceed…<br>
+though even now the answer is not crystal clear and I think it
+never would be.. but at least I have something which I agree too and
+seems a fine and convincing answer to my question…<br></p>
+
+<br>
+
+
+<p>The article goes something like this…<br></p>
+
+<p>&nbsp;</p>
+
+
+<p>Lazy kids.<br>
+Whatever happened to hard work?<br>
+A sure sign of my descent into senility is bitchin’ and moanin’
+ about “kids these days,” and how they won’t or can’t do anything hard
+any more.<br>
+“You were lucky. We lived for three months in a brown paper bag
+ in a septic tank. We had to get up at six in the morning, clean the
+bag, eat a crust of stale bread, go to work down the mill, fourteen
+hours a day, week-in week-out, and when we got home our Dad would thrash
+ us to sleep with his belt.” — Monty Python’s Flying Circus,&nbsp;Four Yorkshiremen
+When&nbsp;I&nbsp;was a kid, I learned to program on
+punched cards. If you made a mistake, you didn’t have any of these
+modern features like a backspace key to correct it. You threw away the
+card and started over.<br>
+When I started interviewing programmers in 1991, I would
+generally let them use any language they wanted to solve the coding
+problems I gave them. 99% of the time, they chose C.
+Nowadays, they tend to choose Java.<br>
+Now, don’t get me wrong: there’s nothing wrong with Java as an implementation language.
+Wait a minute, I want to modify that statement. I’m not claiming,&nbsp;in this particular article,&nbsp;that
+ there’s anything wrong with Java as an implementation language. There
+are lots of things wrong with it but those will have to wait for a
+different article.<br>
+Instead what I’d like to claim is that Java is not, generally, a
+ hard enough programming language that it can be used to discriminate
+between great programmers and mediocre programmers. It may be a fine
+language to work in, but that’s not today’s topic. I would even go so
+far as to say that the fact that Java is not hard enough is a feature,
+not a bug, but it does have this one problem.<br>
+If I may be so brash, it has been my humble experience that
+there are two things traditionally taught in universities as a part of a
+ computer science curriculum which many people just never really fully
+comprehend: pointers and recursion.<br>
+You used to start out in college with a course in data
+structures, with linked lists and hash tables and whatnot, with
+extensive use of pointers. Those courses were often used as weedout
+courses: they were so hard that anyone that couldn’t handle the mental
+challenge of a CS degree would give up, which was a good thing, because
+if you thought pointers are hard, wait until you try to prove things
+about fixed point theory.<br>
+All the kids who did great in high school writing pong games in
+ BASIC for their Apple II would get to college, take CompSci 101, a data
+ structures course, and when they hit the pointers business their brains
+ would just totally explode, and the next thing you knew, they were
+majoring in Political Science because law school seemed like a better
+idea. I’ve seen all kinds of figures for drop-out rates in CS and
+they’re usually between 40% and 70%. The universities tend to see this
+as a waste; I think it’s just a necessary culling of the people who
+aren’t going to be happy or successful in programming careers.
+The other hard course for many young CS students was the course
+ where you learned functional programming, including recursive
+programming. MIT set the bar very high for these courses, creating a
+required&nbsp;<a href="http://sicp.csail.mit.edu/Fall-2005/">course</a>&nbsp;(6.001) and a textbook (Abelson &amp; Sussman’s&nbsp;<a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">Structure and Interpretation of Computer Programs</a>)
+ which were used at dozens or even hundreds of top CS schools as the de
+facto introduction to computer science. (You can, and should, watch an
+older version of the lectures&nbsp;<a href="http://swiss.csail.mit.edu/classes/6.001/abelson-sussman-lectures/">online</a>.)
+The difficulty of these courses is astonishing. In the first
+lecture you’ve learned pretty much all of Scheme, and you’re already
+being introduced to a fixed-point function that takes another function
+as its input. When I struggled through such a course, CSE121 at Penn, I
+watched as many if not most of the students just didn’t make it. The
+material was too hard. I wrote a long sob email to the professor saying
+It Just Wasn’t Fair. Somebody at Penn must have listened to me (or one
+of the other complainers), because that course is now taught in Java.
+I wish they hadn’t listened.<br>
+Therein lies the debate. Years of whinging by lazy CS
+undergrads like me, combined with complaints from industry about how few
+ CS majors are graduating from American universities, have taken a toll,
+ and in the last decade a large number of otherwise perfectly good
+schools have gone 100% Java. It’s hip, the recruiters who use “grep” to
+evaluate resumes seem to like it, and, best of all, there’s nothing hard
+ enough about Java to really weed out the programmers without the part
+of the brain that does pointers or recursion, so the drop-out rates are
+lower, and the computer science departments have more students, and
+bigger budgets, and all is well.<br>
+The lucky kids of JavaSchools are never going to get weird
+segfaults trying to implement pointer-based hash tables. They’re never
+going to go stark, raving mad trying to pack things into bits. They’ll
+never have to get their head around how, in a purely functional program,
+ the value of a variable never changes, and yet, it changes all the
+time! A paradox!<br>
+They don’t need that part of the brain to get a 4.0 in major.
+Am I just one of those old-fashioned curmudgeons, like the Four
+ Yorkshiremen, bragging about how tough I was to survive all that hard
+stuff?<br>
+Heck, in 1900, Latin and Greek were required subjects in
+college, not because they served any purpose, but because they were sort
+ of considered an obvious requirement for educated people. In some sense
+ my argument is no different that the argument made by the pro-Latin
+people (all four of them). “[Latin] trains your mind. Trains your
+memory. Unraveling a Latin sentence is an excellent exercise in thought,
+ a real intellectual puzzle, and a good introduction to logical
+thinking,”&nbsp;<a href="http://www.promotelatin.org/whylatin.htm">writes</a>&nbsp;Scott
+ Barker. But I can’t find a single university that requires Latin any
+more. Are pointers and recursion the Latin and Greek of Computer
+Science?<br>
+Now, I freely admit that programming with pointers is not
+needed in 90% of the code written today, and in fact, it’s downright
+dangerous in production code. OK. That’s fine. And functional
+programming is just not used much in practice. Agreed.
+But it’s still important for some of the most exciting
+programming jobs. Without pointers, for example, you’d never be able to
+work on the Linux kernel. You can’t understand a line of code in Linux,
+or, indeed, any operating system, without really understanding pointers.
+Without understanding functional programming, you can’t invent&nbsp;<a href="http://labs.google.com/papers/mapreduce.html">MapReduce</a>,
+ the algorithm that makes Google so massively scalable. The terms Map
+and Reduce come from Lisp and functional programming. MapReduce is, in
+retrospect, obvious to anyone who remembers from their 6.001-equivalent
+programming class that purely functional programs have no side effects
+and are thus trivially parallelizable. The very fact that Google
+invented MapReduce, and Microsoft didn’t, says something about why
+Microsoft is still playing catch up trying to get basic search features
+to work, while Google has moved on to the next problem: building&nbsp;<a href="http://en.wikipedia.org/wiki/Skynet">Skynet</a><sup>H<sup>H<sup>H<sup>H<sup>H<sup>H</sup></sup></sup></sup></sup></sup> the world’s largest massively parallel&nbsp;<a href="http://www.pbs.org/cringely/pulpit/pulpit20051117.html">supercomputer</a>. I don’t think Microsoft completely understands just how far behind they are on that wave.
+But beyond the prima-facie importance of pointers and
+recursion, their real value is that building big systems requires the
+kind of mental flexibility you get from learning about them, and the
+mental aptitude you need to avoid being weeded out of the courses in
+which they are taught. Pointers and recursion require a certain ability
+to reason, to think in abstractions, and, most importantly, to view a
+problem at several levels of abstraction simultaneously. And thus, the
+ability to understand pointers and recursion is directly correlated with
+ the ability to be a great programmer.<br>
+Nothing about an all-Java CS degree really weeds out the
+students who lack the mental agility to deal with these concepts. As an
+employer, I’ve seen that the 100% Java schools have started churning out
+ quite a few CS graduates who are simply not smart enough to work as
+programmers on anything more sophisticated than Yet Another Java
+Accounting Application, although they did manage to squeak through the
+newly-dumbed-down coursework. These students would never survive 6.001
+at MIT, or CS 323 at Yale, and frankly, that is one reason why, as an
+employer, a CS degree from MIT or Yale carries more weight than a CS
+degree from Duke, which recently went All-Java, or U. Penn, which
+replaced Scheme and ML with Java in trying to teach the class that
+nearly killed me and my friends, CSE121. Not that I don’t want to hire
+smart kids from Duke and Penn — I do — it’s just a lot harder for me to
+figure out who they are. I used to be able to tell the smart kids
+because they could rip through a recursive algorithm in seconds, or
+implement linked-list manipulation functions using pointers as fast as
+they could write on the whiteboard. But with a JavaSchool Grad, I can’t
+tell if they’re struggling with these problems because they are
+undereducated or if they’re struggling with these problems because they
+don’t actually have that special part of the brain that they’re going to
+ need to do great programming work. Paul Graham calls them&nbsp;<a href="http://www.paulgraham.com/avg.html">Blub Programmers</a>.
+It’s bad enough that JavaSchools fail to weed out the kids who
+are never going to be great programmers, which the schools could
+justifiably say is not their problem. Industry, or, at least, the
+recruiters-who-use-grep, are surely clamoring for Java to be taught.
+But JavaSchools also fail to train the brains of kids to be
+adept, agile, and flexible enough to do good software design (and I
+don’t mean OO “design”, where you spend countless hours rewriting your
+code to rejiggle your object hierarchy, or you fret about faux
+“problems” like has-a vs. is-a). You need training to think of things at
+ multiple levels of abstraction simultaneously, and that kind of
+thinking is exactly what you need to design great software architecture.
+You may be wondering if teaching object oriented programming
+(OOP) is a good weed-out substitute for pointers and recursion. The
+quick answer: no. Without debating OOP on the merits, it is just not
+hard enough to weed out mediocre programmers. OOP in school consists
+mostly of memorizing a bunch of vocabulary terms like “encapsulation”
+and “inheritance” and taking multiple-choice&nbsp;quizzicles&nbsp;on the
+ difference between polymorphism and overloading. Not much harder than
+memorizing famous dates and names in a history class, OOP poses
+inadequate mental challenges to scare away first-year students. When you
+ struggle with an OOP problem,&nbsp;your program still works, it’s just sort of hard to maintain. Allegedly. But when you struggle with pointers, your program produces the line&nbsp;<strong>Segmentation Fault</strong>&nbsp;and
+ you have no idea what’s going on, until you stop and take a deep breath
+ and really try to force your mind to work at two different levels of
+abstraction simultaneously.
+The recruiters-who-use-grep, by the way, are ridiculed here,
+and for good reason. I have never met anyone who can do Scheme, Haskell,
+ and C pointers who can’t pick up Java in two days, and create better
+Java code than people with five years of experience in Java, but try
+explaining that to the average HR drone.<br>
+But what about the CS mission of CS departments? They’re not
+vocational schools! It shouldn’t be their job to train people to work in
+ industry. That’s for community colleges and government retraining
+programs for displaced workers, they will tell you. They’re supposed to
+be giving students the fundamental tools to live their lives, not
+preparing them for their first weeks on the job. Right?
+<a href="http://www.columbia.edu/acis/history/026.html"><img src="http://www.joelonsoftware.com/pictures/cs1.PNG" alt="Card Punch -- yes, I learned Fortran on one of these when I was 12." border="0" align="right"></a>Still.
+ CS is proofs (recursion), algorithms (recursion), languages (lambda
+calculus), operating systems (pointers), compilers (lambda calculus) —
+and so the bottom line is that a JavaSchool that won’t teach C and won’t
+ teach Scheme is not really teaching computer science, either. As
+useless as the concept of function currying may be to the real world,
+it’s obviously a prereq for CS grad school. I can’t understand why the
+professors on the curriculum committees at CS schools have allowed their
+ programs to be dumbed down to the point where not only can’t they
+produce&nbsp;working programmers, they can’t even produce CS
+grad students who might get PhDs and compete for their jobs. Oh wait.
+Never mind. Maybe I do understand.<br>
+Actually if you go back and research the discussion that took
+place in academia during the Great Java Shift, you’ll notice that the
+biggest concern was whether Java was&nbsp;simple&nbsp;enough to use as a teaching language.
+My God,&nbsp;I thought,&nbsp;they’re&nbsp;trying to dumb down the curriculum even further!&nbsp;Why
+ not spoon feed everything to the students? Let’s have the TAs take
+their tests for them, too, then nobody will switch to American Studies.
+How is anyone supposed to learn anything if the curriculum has been
+carefully designed to make everything easier than it already is? There
+seems to be a task force underway (<a href="http://www.sigcse.org/topics/javataskforce/java-task-force.pdf">PDF</a>)
+ to figure out a simple subset of Java that can be taught to students,
+producing simplified documentation that carefully hides all that
+EJB/J2EE crap from their tender minds, so they don’t have to worry their
+ little heads with any classes that you don’t need to do the ever-easier
+ CS problem sets.<br>
+The most sympathetic interpretation of why CS departments are
+so enthusiastic to dumb down their classes is that it leaves them more
+time to teach actual CS concepts, if they don’t need to spend two whole
+lectures unconfusing students about the difference between, say, a Java<strong>&nbsp;int&nbsp;</strong>and an&nbsp;<strong>Integer</strong>.
+ Well, if that’s the case, 6.001 has the perfect answer for you: Scheme,
+ a teaching language so simple that the entire language can be taught to
+ bright students in about ten minutes; then you can spend the rest of
+the semester on fixed points.
+Feh.<br><br>
+I’m going back to ones and zeros.<br>
+(You had ones? Lucky bastard! All we got were zeros.)</p>
+]]></content>
+  </entry>
+  
+</feed>

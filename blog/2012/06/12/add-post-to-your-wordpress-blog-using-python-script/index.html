@@ -1,0 +1,198 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add post to your wordpress Blog using python script - My Octopress Blog</title>
+    <meta name="author" content="Pankaj Kumar">
+<!--
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Denk+One' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    -->
+    
+	<meta name="description" content="I was searching for some way(read script) to automatically transfer/add post to my WordPress blog from another site. The main mission was to &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/combo.js"></script>
+	
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner">    <div id="animateTest">
+<h1 class="animated bounceInDown">
+        Pankaj Kumar
+</h1>
+    </div>
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/panks" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/234420948240928340" class="googleplus" title="Google Plus"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/panks.cogito" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/pankajxdx" class="twitter" title="Twitter"></a>
+  </li>
+  
+</ul>
+
+
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li><a href="https://www.github.com/panks">Code</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="" id="search">
+            <input name="query" type="text" style="margin-top:20px;" size="40" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="search_results" style="display:none">
+<header><h1 class="entry-title"><center>Search Results</center></h1></header>
+<br>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+<script>
+         $('#search_results').tapir({
+             'token': '50e03b6e3f61b0160000014d'
+         });
+</script>
+    <div id="container">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Add Post to Your Wordpress Blog Using Python Script</h2>
+	<div class="entry-content"><p> <p>I was searching for some way(read script) to automatically transfer/add post to my WordPress blog from another site. The main mission was to transfer around 500 posts to wordpress and no way I was going to do it manually.</p>
+ <p>On googling a little bit I got to know wordpress has it&#8217;s own api which uses xlrpc interface for communicating to blog and I can use that to automate my job. Below is the script I used. I just set the vars and loops and started it in terminal and voila! within ~30 min the new wordpress was up and running proudly with 500 new posts.</p></p>
+
+<!--more-->
+
+
+<p> <p>Find the script below.<br />
+ It uses xmlpclib, read about it <a href="http://codex.wordpress.org/XML-RPC_Support">here.</a></p></p>
+
+<center><img class="bd" src="/images/posts/wordpressicon.png" height=40% width=40%></center>
+
+
+<br>
+
+
+<p>For using it you need to:</p>
+
+
+<p>1. Enable XML-RPC functionality in your blog: go to <a title="Settings Writing Screen" href="http://codex.wordpress.org/Settings_Writing_Screen#Remote_Publishing">Settings &gt; Writing &gt; Remote Publishing</a> and check the checkbox.</p>
+
+
+<p>2. Install <code>python</code> and <a href="http://sourceforge.net/projects/py-xmlrpc/">xmlpc</a>.</p>
+
+
+<p>3. You are all set to go.</p>
+
+
+<p>You may also add custom date and time to your posts.</p>
+
+
+
+
+<pre class="sh_python">
+import datetime, xmlrpclib
+
+wp_url = "http://www.yourblog.com/xmlrpc.php"
+wp_username = "USERNAME"
+wp_password = "PASSWD"
+wp_blogid = ""
+status_draft = 0
+status_published = 1
+
+server = xmlrpclib.ServerProxy(wp_url)
+
+title = "Title with spaces"
+content = "Body with lots of content"
+date_created = xmlrpclib.DateTime(datetime.datetime.strptime("2011-10-20 21:08", "%Y-%m-%d %H:%M"))
+categories = ["category here"]
+tags = ["sometag", "othertag"] 
+data = {'title': title, 'description': content, 'dateCreated': date_created, 'categories': categories, 'mt_keywords': tags}
+
+post_id = server.metaWeblog.newPost(wp_blogid, wp_username, wp_password, data, status_published)
+</pre>
+
+</div>
+
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer"><div style="display:inline">
+    Copyright &copy; 2013
+
+    Pankaj Kumar
+. Powered by <a href="http://octopress.org">Octopress</a> <em>HTML5 & CSS3</em>
+</div>
+
+</footer>
+    <script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>
