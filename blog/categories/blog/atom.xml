@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blog | My Octopress Blog]]></title>
-  <link href="http://pankaj-kumar.github.com/blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://pankaj-kumar.github.com/"/>
-  <updated>2013-01-03T05:23:40+05:30</updated>
-  <id>http://pankaj-kumar.github.com/</id>
+  <link href="http://panks.me/test/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://panks.me/test/"/>
+  <updated>2013-01-03T05:27:50+05:30</updated>
+  <id>http://panks.me/test/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Host your blog on Github for free]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
+    <link href="http://panks.me/test/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
     <updated>2012-04-30T07:20:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/04/30/host-your-blog-on-github-for-free</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/githubicon.png"></center>
+    <id>http://panks.me/test/blog/2012/04/30/host-your-blog-on-github-for-free</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/githubicon.png"></center>
 
 
 <br>

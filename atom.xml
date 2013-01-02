@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://pankaj-kumar.github.com/atom.xml" rel="self"/>
-  <link href="http://pankaj-kumar.github.com/"/>
-  <updated>2013-01-03T05:23:40+05:30</updated>
-  <id>http://pankaj-kumar.github.com/</id>
+  <link href="http://panks.me/test/atom.xml" rel="self"/>
+  <link href="http://panks.me/test/"/>
+  <updated>2013-01-03T05:27:50+05:30</updated>
+  <id>http://panks.me/test/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[From Wordpress to Octopress]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/12/24/from-wordpress-to-octopress/"/>
+    <link href="http://panks.me/test/blog/2012/12/24/from-wordpress-to-octopress/"/>
     <updated>2012-12-24T18:20:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/12/24/from-wordpress-to-octopress</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/octopress-logo.png"></center>
+    <id>http://panks.me/test/blog/2012/12/24/from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/octopress-logo.png"></center>
 
 
 <br>
@@ -47,7 +47,7 @@ and of course you can deploy it if you have your own web hosting,</p>
 <h2>Goodbye! Wordpress</h2>
 
 
-<center><img class="bd" src="http://pankaj-kumar.github.com/images/posts/Exit-Signboard2.jpg" height=100% width=100%></center>
+<center><img class="bd" src="http://panks.me/test/images/posts/Exit-Signboard2.jpg" height=100% width=100%></center>
 
 
 <br>
@@ -61,7 +61,7 @@ and of course you can deploy it if you have your own web hosting,</p>
 <h2>Setting it up</h2>
 
 
-<center><img class="bd" title="Let's go back to Static" alt="Let's go back to static" src="http://pankaj-kumar.github.com/images/posts/fromwptoop.jpg"></center>
+<center><img class="bd" title="Let's go back to Static" alt="Let's go back to static" src="http://panks.me/test/images/posts/fromwptoop.jpg"></center>
 
 
 <br>
@@ -174,9 +174,9 @@ rake deploy
   
   <entry>
     <title type="html"><![CDATA[The Richard Feynman way of learning better and faster]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster/"/>
+    <link href="http://panks.me/test/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster/"/>
     <updated>2012-12-13T05:10:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster</id>
+    <id>http://panks.me/test/blog/2012/12/13/the-richard-feynman-way-of-learning-better-and-faster</id>
     <content type="html"><![CDATA[<p><list>
 <li>Step 1. <strong>Choose the concept you want to understand</strong><br></li>
 Take a blank piece of paper and write that concept at the top of the page.</p>
@@ -217,9 +217,9 @@ The goal is to use your words, not the words of the source material. If your exp
   
   <entry>
     <title type="html"><![CDATA[Search engines for deep web]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/08/12/search-engines-for-deep-web/"/>
+    <link href="http://panks.me/test/blog/2012/08/12/search-engines-for-deep-web/"/>
     <updated>2012-08-12T14:36:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/08/12/search-engines-for-deep-web</id>
+    <id>http://panks.me/test/blog/2012/08/12/search-engines-for-deep-web</id>
     <content type="html"><![CDATA[<p>The Deep Web (also called the Deepnet, the Invisible Web, the Undernet or the hidden Web) is World Wide Web content that is not part of the Surface Web, which is indexed by standard search engines. It represents a gargantuan part of the internet which is not accessible through regular searches via google or other search engines.</p>
 
 
@@ -257,9 +257,9 @@ The goal is to use your words, not the words of the source material. If your exp
   
   <entry>
     <title type="html"><![CDATA[Add post to your wordpress Blog using python script]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script/"/>
+    <link href="http://panks.me/test/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script/"/>
     <updated>2012-06-12T08:00:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script</id>
+    <id>http://panks.me/test/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script</id>
     <content type="html"><![CDATA[<p> <p>I was searching for some way(read script) to automatically transfer/add post to my WordPress blog from another site. The main mission was to transfer around 500 posts to wordpress and no way I was going to do it manually.</p>
  <p>On googling a little bit I got to know wordpress has it&#8217;s own api which uses xlrpc interface for communicating to blog and I can use that to automate my job. Below is the script I used. I just set the vars and loops and started it in terminal and voila! within ~30 min the new wordpress was up and running proudly with 500 new posts.</p></p>
 
@@ -269,7 +269,7 @@ The goal is to use your words, not the words of the source material. If your exp
 <p> <p>Find the script below.<br />
  It uses xmlpclib, read about it <a href="http://codex.wordpress.org/XML-RPC_Support">here.</a></p></p>
 
-<center><img class="bd" src="http://pankaj-kumar.github.com/images/posts/wordpressicon.png" height=40% width=40%></center>
+<center><img class="bd" src="http://panks.me/test/images/posts/wordpressicon.png" height=40% width=40%></center>
 
 
 <br>
@@ -319,9 +319,9 @@ post_id = server.metaWeblog.newPost(wp_blogid, wp_username, wp_password, data, s
   
   <entry>
     <title type="html"><![CDATA[Deploy your cloud apps for free]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free/"/>
+    <link href="http://panks.me/test/blog/2012/05/31/deploy-your-cloud-apps-for-free/"/>
     <updated>2012-05-31T07:26:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/05/31/deploy-your-cloud-apps-for-free</id>
+    <id>http://panks.me/test/blog/2012/05/31/deploy-your-cloud-apps-for-free</id>
     <content type="html"><![CDATA[<p>If you want to host you webapp somewhere and test/present it for
 free, you can use the free service given by Heroku or Openshift by Red
 Hat.</p></p>
@@ -337,7 +337,7 @@ need to push your app to your server via git to deploy it.</p>
 
 
 <p>You can get started with heroku here – <a href="http://devcenter.heroku.com/articles/quickstart">http://devcenter.heroku.com/articles/quickstart</a>.
-<center><br><img  src="http://pankaj-kumar.github.com/images/posts/250px-OpenShift-LogoType.svg.png" class="bd"></center><br>
+<center><br><img  src="http://panks.me/test/images/posts/250px-OpenShift-LogoType.svg.png" class="bd"></center><br>
 You would also learn how to use git (a version control software) to 
 be able to deploy your application on heroku. For the first timers, it 
 would take some time to get your application running on heroku. Once you
@@ -356,10 +356,10 @@ would take some time to get your application running on heroku. Once you
   
   <entry>
     <title type="html"><![CDATA[Host your blog on Github for free]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
+    <link href="http://panks.me/test/blog/2012/04/30/host-your-blog-on-github-for-free/"/>
     <updated>2012-04-30T07:20:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/04/30/host-your-blog-on-github-for-free</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/githubicon.png"></center>
+    <id>http://panks.me/test/blog/2012/04/30/host-your-blog-on-github-for-free</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/githubicon.png"></center>
 
 
 <br>
@@ -391,9 +391,9 @@ would take some time to get your application running on heroku. Once you
   
   <entry>
     <title type="html"><![CDATA[Expect- talk with programs using scripts]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/12/22/expect-talk-with-programs-using-scripts/"/>
+    <link href="http://panks.me/test/blog/2011/12/22/expect-talk-with-programs-using-scripts/"/>
     <updated>2011-12-22T07:07:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/12/22/expect-talk-with-programs-using-scripts</id>
+    <id>http://panks.me/test/blog/2011/12/22/expect-talk-with-programs-using-scripts</id>
     <content type="html"><![CDATA[<p>&#8220;OK! Now I can&#8217;t bear it anymore&#8221; - The condition after our endsems got over, as Insti bandwidth usages was on peak, one had no work other than running behind monkey (yeah we do have monkeys in our campus, all around us, so blessed we are, aren&#8217;t we?) to scare them to death or stick your bum to chair and do some time pass on internet.</p>
 
 <br>
@@ -401,7 +401,7 @@ would take some time to get your application running on heroku. Once you
 
 <p>But they say there is solution to every problem, here was it.<!--more--> We had access to our departmental network, which uses different proxy server, and since the LAN is common throughout the Insti we could connect to it, to get a little relief in internet speed, obviously everyone could do that, but you don&#8217;t expect students from Bio-tech people to type commands in terminal(they are already happy enough by looking at windows animation), until that&#8217;s the only option to save the human race.</p>
 
-<center><img src="http://pankaj-kumar.github.com/images/posts/batmantux.png"></center>
+<center><img src="http://panks.me/test/images/posts/batmantux.png"></center>
 
 
 <p> <br></p>
@@ -436,9 +436,9 @@ starting with a number between 1 and 99, they would be executed in ascending ord
   
   <entry>
     <title type="html"><![CDATA[Git basic commands]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/12/11/git-basic-commands/"/>
+    <link href="http://panks.me/test/blog/2011/12/11/git-basic-commands/"/>
     <updated>2011-12-11T07:11:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/12/11/git-basic-commands</id>
+    <id>http://panks.me/test/blog/2011/12/11/git-basic-commands</id>
     <content type="html"><![CDATA[<p>While I was working during my winter break at home I 
 had to use git a lot for debugging KDE apps. So, I thought of writing 
 this article. It will help newbies a lot to just read this single page 
@@ -454,7 +454,7 @@ are short of time and you need only basic stuff for your job.</p>
 <br>
 
 
-<center><img src="http://pankaj-kumar.github.com/images/posts/github-logo.png"></center>
+<center><img src="http://panks.me/test/images/posts/github-logo.png"></center>
 
 
 <br>
@@ -965,9 +965,9 @@ file stays in the working directory, on the disk.</p>
   
   <entry>
     <title type="html"><![CDATA[Cron job to schedule your jobs]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/11/15/cron-job-to-schedule-your-jobs/"/>
+    <link href="http://panks.me/test/blog/2011/11/15/cron-job-to-schedule-your-jobs/"/>
     <updated>2011-11-15T08:20:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/11/15/cron-job-to-schedule-your-jobs</id>
+    <id>http://panks.me/test/blog/2011/11/15/cron-job-to-schedule-your-jobs</id>
     <content type="html"><![CDATA[<p>While writing an Application for an Advertising company I came across this utility, this called <code>Cron</code>.
 It’s a <a href="http://gnu.org">GNU-Linux</a> application to run programs or scripts at specified date/time, so basically you can schedule you jobs using Cron.</p>
 
@@ -988,7 +988,7 @@ It’s actually a demon. (In case you don’t know) <a href="http://en.wikipedia
 <br>
 
 
-<center><img class="bd" src="http://pankaj-kumar.github.com/images/posts/cron.png" height=70% width=70%></center>
+<center><img class="bd" src="http://panks.me/test/images/posts/cron.png" height=70% width=70%></center>
 
 
 <br>
@@ -1238,15 +1238,15 @@ HOME=/
   
   <entry>
     <title type="html"><![CDATA[Richard Stallman at IIT Madras]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/11/06/richard-stallman-at-iit-madras/"/>
+    <link href="http://panks.me/test/blog/2011/11/06/richard-stallman-at-iit-madras/"/>
     <updated>2011-11-06T07:33:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/11/06/richard-stallman-at-iit-madras</id>
+    <id>http://panks.me/test/blog/2011/11/06/richard-stallman-at-iit-madras</id>
     <content type="html"><![CDATA[<p>Today I got to meet the man who started it all.. who started the 
 concept of “FREE SOFTWARE”… who started the GNU project, Richard 
 Stallman.</p>
 
 
-<center><img src="http://pankaj-kumar.github.com/images/posts/stallman.jpg" height=40% width=40%></center>
+<center><img src="http://panks.me/test/images/posts/stallman.jpg" height=40% width=40%></center>
 
 
 <br>
@@ -1316,10 +1316,10 @@ Kernel. Then came in picture the guy called Linus Torvalds, he had already writt
   
   <entry>
     <title type="html"><![CDATA[Android this first SummeR]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/08/14/android-this-first-summer/"/>
+    <link href="http://panks.me/test/blog/2011/08/14/android-this-first-summer/"/>
     <updated>2011-08-14T06:42:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/08/14/android-this-first-summer</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/android.png"></center>
+    <id>http://panks.me/test/blog/2011/08/14/android-this-first-summer</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/android.png"></center>
 
 
 <br>
@@ -1359,10 +1359,10 @@ and of course: <a href="http://developer.android.com/index.html">http://develope
   
   <entry>
     <title type="html"><![CDATA[Vim – Interactive tutorial]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/07/29/vim-interactive-tutorial/"/>
+    <link href="http://panks.me/test/blog/2011/07/29/vim-interactive-tutorial/"/>
     <updated>2011-07-29T07:38:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/07/29/vim-interactive-tutorial</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/vimlogo.png" height=30% width=30% ></center>
+    <id>http://panks.me/test/blog/2011/07/29/vim-interactive-tutorial</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/vimlogo.png" height=30% width=30% ></center>
 
 
 <br>
@@ -1425,10 +1425,10 @@ If you are starting with Vim, I would recommend you to try it out once, just for
   
   <entry>
     <title type="html"><![CDATA[Java vs C++]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/03/11/java-vs-c-plus-plus/"/>
+    <link href="http://panks.me/test/blog/2011/03/11/java-vs-c-plus-plus/"/>
     <updated>2011-03-11T07:30:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/03/11/java-vs-c-plus-plus</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/FlamingGodzillaSmall.png"></center>
+    <id>http://panks.me/test/blog/2011/03/11/java-vs-c-plus-plus</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/FlamingGodzillaSmall.png"></center>
 
 
 <br>

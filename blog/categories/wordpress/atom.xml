@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: wordpress | My Octopress Blog]]></title>
-  <link href="http://pankaj-kumar.github.com/blog/categories/wordpress/atom.xml" rel="self"/>
-  <link href="http://pankaj-kumar.github.com/"/>
-  <updated>2013-01-03T05:23:40+05:30</updated>
-  <id>http://pankaj-kumar.github.com/</id>
+  <link href="http://panks.me/test/blog/categories/wordpress/atom.xml" rel="self"/>
+  <link href="http://panks.me/test/"/>
+  <updated>2013-01-03T05:27:50+05:30</updated>
+  <id>http://panks.me/test/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Add post to your wordpress Blog using python script]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script/"/>
+    <link href="http://panks.me/test/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script/"/>
     <updated>2012-06-12T08:00:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script</id>
+    <id>http://panks.me/test/blog/2012/06/12/add-post-to-your-wordpress-blog-using-python-script</id>
     <content type="html"><![CDATA[<p> <p>I was searching for some way(read script) to automatically transfer/add post to my WordPress blog from another site. The main mission was to transfer around 500 posts to wordpress and no way I was going to do it manually.</p>
  <p>On googling a little bit I got to know wordpress has it&#8217;s own api which uses xlrpc interface for communicating to blog and I can use that to automate my job. Below is the script I used. I just set the vars and loops and started it in terminal and voila! within ~30 min the new wordpress was up and running proudly with 500 new posts.</p></p>
 
@@ -27,7 +27,7 @@
 <p> <p>Find the script below.<br />
  It uses xmlpclib, read about it <a href="http://codex.wordpress.org/XML-RPC_Support">here.</a></p></p>
 
-<center><img class="bd" src="http://pankaj-kumar.github.com/images/posts/wordpressicon.png" height=40% width=40%></center>
+<center><img class="bd" src="http://panks.me/test/images/posts/wordpressicon.png" height=40% width=40%></center>
 
 
 <br>

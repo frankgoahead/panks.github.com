@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: deep web | My Octopress Blog]]></title>
-  <link href="http://pankaj-kumar.github.com/blog/categories/deep-web/atom.xml" rel="self"/>
-  <link href="http://pankaj-kumar.github.com/"/>
-  <updated>2013-01-03T05:23:40+05:30</updated>
-  <id>http://pankaj-kumar.github.com/</id>
+  <link href="http://panks.me/test/blog/categories/deep-web/atom.xml" rel="self"/>
+  <link href="http://panks.me/test/"/>
+  <updated>2013-01-03T05:27:50+05:30</updated>
+  <id>http://panks.me/test/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Search engines for deep web]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2012/08/12/search-engines-for-deep-web/"/>
+    <link href="http://panks.me/test/blog/2012/08/12/search-engines-for-deep-web/"/>
     <updated>2012-08-12T14:36:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2012/08/12/search-engines-for-deep-web</id>
+    <id>http://panks.me/test/blog/2012/08/12/search-engines-for-deep-web</id>
     <content type="html"><![CDATA[<p>The Deep Web (also called the Deepnet, the Invisible Web, the Undernet or the hidden Web) is World Wide Web content that is not part of the Surface Web, which is indexed by standard search engines. It represents a gargantuan part of the internet which is not accessible through regular searches via google or other search engines.</p>
 
 

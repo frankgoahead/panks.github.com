@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: programming | My Octopress Blog]]></title>
-  <link href="http://pankaj-kumar.github.com/blog/categories/programming/atom.xml" rel="self"/>
-  <link href="http://pankaj-kumar.github.com/"/>
-  <updated>2013-01-03T05:23:40+05:30</updated>
-  <id>http://pankaj-kumar.github.com/</id>
+  <link href="http://panks.me/test/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://panks.me/test/"/>
+  <updated>2013-01-03T05:27:50+05:30</updated>
+  <id>http://panks.me/test/</id>
   <author>
     <name><![CDATA[Pankaj Kumar]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Java vs C++]]></title>
-    <link href="http://pankaj-kumar.github.com/blog/2011/03/11/java-vs-c-plus-plus/"/>
+    <link href="http://panks.me/test/blog/2011/03/11/java-vs-c-plus-plus/"/>
     <updated>2011-03-11T07:30:00+05:30</updated>
-    <id>http://pankaj-kumar.github.com/blog/2011/03/11/java-vs-c-plus-plus</id>
-    <content type="html"><![CDATA[<center><img src="http://pankaj-kumar.github.com/images/posts/FlamingGodzillaSmall.png"></center>
+    <id>http://panks.me/test/blog/2011/03/11/java-vs-c-plus-plus</id>
+    <content type="html"><![CDATA[<center><img src="http://panks.me/test/images/posts/FlamingGodzillaSmall.png"></center>
 
 
 <br>
